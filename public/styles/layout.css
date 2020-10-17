@@ -1,0 +1,15 @@
+body {
+  font-family: "Karma", sans-serif;
+}
+
+body h1 {
+  color: #244751;
+}
+
+.w3-bar-block .w3-bar-item {
+  padding: 20px;
+}
+
+.w3-main img {
+  width: 100%;
+}
