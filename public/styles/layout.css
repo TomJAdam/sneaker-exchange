@@ -44,7 +44,7 @@ nav #logo {
 
 .search-bar input {
   border-radius: 5px;
-  border-color: #3B5C3F;
+  border: 1px solid #3B5C3F;
   width: 100px;
   padding: 3px;
   margin: 3px;
