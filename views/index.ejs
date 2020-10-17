@@ -19,24 +19,61 @@
 
 <body>
 
+  <!-- Top Nav -->
+  <nav>
+    <div class="w3-top">
+      <div class="w3-xlarge">
+        <div class="w3-bar">
+          <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-left w3-padding-16">Sneaker<b>Exchange</b></a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Search</a>
 
-  <!-- Top menu -->
-  <header class="w3-row-padding w3-padding-32">
-  <div class="w3-top">
-    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+          <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Login</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Register</a>
+        </div>
 
-      <div class="w3-left w3-padding-16">Sneakers</div>
-      <div class="w3-right w3-padding-16">login</div>
-      <div class="w3-center w3-padding-16">logo</div>
+      </div>
     </div>
+  </nav>
+
+  <header>
+      <div class="w3-container w3-display-middle">
+        <h3><b>stay fresh, buy sneakers</b></h3>
+      </div>
+  </header>
+
+
+  <!-- search bar -->
+  <div class="search-bar">
+    <form action="/sneakers" method="get">
+      <div class="w3-container w3-cell">
+        <label for="brand-search">Brand:</label>
+        <input type="text" name="brand" placeholder="Adidas..">
+      </div>
+
+      <div class="w3-container w3-cell">
+        <label for="min-price-search">Minimum Price:</label>
+        <input type="number" name="min_price" placeholder="$$$...">
+        <label for="max-price-search">Maximum Price:</label>
+        <input type="number" name="max_price" placeholder="$$$...">
+      </div>
+
+      <div class="w3-container w3-cell">
+        <label for="size-search">Size:</label>
+        <input type="number" name="size" placeholder="9...">
+      </div>
+
+      <div class="w3-container w3-cell">
+          <button>Search</button>
+          <a id="search-property-form__cancel" href="#">Cancel</a>
+      </div>
+    </form>
   </div>
-</header>
 
   <!-- !PAGE CONTENT! -->
-  <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+  <main class="w3-main w3-content w3-padding">
 
     <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-row-padding w3-padding-16 w3-center">
       <div class="w3-quarter">
         <img
           src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
@@ -47,21 +84,21 @@
       <div class="w3-quarter">
         <img
           src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-          alt="Steak" style="width:100%">
+          alt="Steak">
         <h3>Jordan 1 Retro</h3>
         <p>Price</p>
       </div>
       <div class="w3-quarter">
         <img
           src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-          alt="Steak" style="width:100%">
+          alt="Steak">
         <h3>Jordan 1 Retro</h3>
         <p>Price</p>
       </div>
       <div class="w3-quarter">
         <img
           src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-          alt="Steak" style="width:100%">
+          alt="Steak">
         <h3>Jordan 1 Retro</h3>
         <p>Price</p>
       </div>
@@ -71,28 +108,28 @@
         <div class="w3-quarter">
           <img
             src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-            alt="Steak" style="width:100%">
+            alt="Steak">
           <h3>Jordan 1 Retro</h3>
           <p>Price</p>
         </div>
         <div class="w3-quarter">
           <img
             src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-            alt="Steak" style="width:100%">
+            alt="Steak">
           <h3>Jordan 1 Retro</h3>
           <p>Price</p>
         </div>
         <div class="w3-quarter">
           <img
             src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-            alt="Steak" style="width:100%">
+            alt="Steak">
           <h3>Jordan 1 Retro</h3>
           <p>Price</p>
         </div>
         <div class="w3-quarter">
           <img
             src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000"
-            alt="Steak" style="width:100%">
+            alt="Steak">
           <h3>Jordan 1 Retro</h3>
           <p>Price</p>
         </div>
@@ -111,8 +148,7 @@
       </div>
 
 
-    </div>
-    <hr>
+    </main>
 
     <!-- Footer -->
     <footer class="w3-row-padding w3-padding-32">
@@ -143,24 +179,9 @@
         </ul>
       </div>
 
-
     </footer>
 
     <!-- End page content -->
-  </div>
-
-  <script>
-    // Script to open and close sidebar
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-
-  </script>
-
 
 </body>
 

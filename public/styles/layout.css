@@ -1,13 +1,49 @@
 body {
-  font-family: "Karma", sans-serif;
+  font-family: 'Krona One', sans-serif;
 }
 
-body h1 {
-  color: #244751;
+header {
+  max-width: 100%;
+  height: 75%;
+  background-size: cover;
+  background-image: url(../images/header-sneaker.png);
+  background-repeat: no-repeat;
+  z-index: 99;
+}
+
+header .w3-container {
+  color: white;
+  background-color: lightgray;
+  padding: 2.5em;
+  border: 5px solid white;
+}
+
+.search-bar {
+  background-color: #3B5C3F;
+  color: white;
+  width: 100%;
+  padding: 2em;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar .w3-container w3-cell {
+  margin: 1em;
+}
+
+nav {
+  width: 100%;
+  color: white;
 }
 
 .w3-bar-block .w3-bar-item {
   padding: 20px;
+}
+
+.w3-main {
+  max-width: 1200px;
+  margin-top: 100px;
 }
 
 .w3-main img {

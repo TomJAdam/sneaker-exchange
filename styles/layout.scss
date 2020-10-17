@@ -1,11 +1,43 @@
 // See: https://sass-lang.com/
 
+// body
 body {
+  font-family: 'Krona One', sans-serif;
+}
 
-  font-family: "Karma", sans-serif;
-  h1 {
-    color: #244751;
+header {
+  max-width: 100%;
+  height: 75%;
+  background-size: cover;
+  background-image: url(../images/header-sneaker.png);
+  background-repeat: no-repeat;
+  z-index: 99;
+  .w3-container {
+    color: white;
+    background-color: lightgray;
+    padding: 2.5em;
+    border: 5px solid white;
   }
+}
+
+
+// search bar
+.search-bar {
+  background-color: #3B5C3F;
+  color: white;
+  width: 100%;
+  padding: 2em;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  .w3-container w3-cell {
+    margin: 1em;
+  }
+}
+// top page nav
+nav {
+  width: 100%;
+  color: white;
 }
 
 
@@ -18,6 +50,8 @@ body {
 
 // Sneaker div
 .w3-main {
+  max-width: 1200px;
+  margin-top: 100px;
   img {
     width: 100%;
   }
