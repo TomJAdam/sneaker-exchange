@@ -15,5 +15,5 @@ $(document).ready(function() {
   $("#hide-button").click(function() {
     $(".search-bar").slideUp('fast');
   });
-ß
+
 });

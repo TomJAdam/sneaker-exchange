@@ -29,7 +29,7 @@ nav #logo {
 
 .search-bar {
   display: none;
-  background-color: #3B5C3F;
+  background-color: #3b455c;
   border-top: solid 5px white;
   color: white;
   width: 100%;
@@ -42,7 +42,7 @@ nav #logo {
 }
 
 .search-bar .form-inputs {
-  max-width: 80%;
+  max-width: 85%;
 }
 
 .search-bar input {
@@ -56,15 +56,16 @@ nav #logo {
 }
 
 .search-bar button {
-  margin-right: 3em;
+  margin-right: 1.5em;
   margin-bottom: .85em;
+  height: 40px;
 }
 
 .search-bar #hide-button {
   font-size: 36px;
   color: white;
   cursor: pointer;
-  margin-right: .5em;
+  margin-right: 1.5em;
 }
 
 .search-bar #hide-button:hover {
