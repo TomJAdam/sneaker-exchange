@@ -6,14 +6,14 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-module.exports = (db) => {
+module.exports = (dataHelpers) => {
+  //an example to send data back to client
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    dataHelpers.dealingWithData()
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        res.send(data);
       })
       .catch(err => {
         res
@@ -21,5 +21,21 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  // send back data to different listing pages
+  router.get('/:page', (req, res) => {
+    dataHelpers.sneakersListings({}, 5, req.params.page)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
+
   return router;
 };
