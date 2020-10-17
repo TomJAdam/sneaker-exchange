@@ -1,9 +1,24 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #EEE;
 
+  font-family: "Karma", sans-serif;
   h1 {
     color: #244751;
+  }
+}
+
+
+// bottom page nav
+.w3-bar-block .w3-bar-item {
+  padding: 20px
+}
+
+
+
+// Sneaker div
+.w3-main {
+  img {
+    width: 100%;
   }
 }
