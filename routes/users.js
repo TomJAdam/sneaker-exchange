@@ -22,7 +22,18 @@ module.exports = (dataHelpers) => {
       });
   });
 
-
+  // send back data to different listing pages
+  router.get('/:page', (req, res) => {
+    dataHelpers.sneakersListings({}, 5, req.params.page)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
 
 
 
