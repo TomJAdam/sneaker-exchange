@@ -22,27 +22,26 @@ db.connect();
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs"); ignore the ejs template ---- (This is a total crap)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/styles", sass({
-  src: __dirname + "/styles",
-  dest: __dirname + "/public/styles",
-  debug: true,
-  outputStyle: 'expanded'
+    src: __dirname + "/styles",
+    dest: __dirname + "/public/styles",
+    debug: true,
+    outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
 
 
-//import dataHelpers & pass into mini-app routes
 const dataHelpers = require('./lib/data_helpers')(db);
 
 // Separated Routes for each Resource
-const usersRoutes = require("./routes/users")(dataHelpers);
-const widgetsRoutes = require("./routes/widgets"); //not done yet
-
+// const usersRoutes = require("./routes/users")(dataHelpers);
+// const widgetsRoutes = require("./routes/widgets"); //not done yet
+const sneakersRoutes = require("./routes/sneakers")(dataHelpers);
 
 // Mount all resource routes
-app.use('/api/users', usersRoutes);
+app.use('/api/sneakers', sneakersRoutes);
 // app.use("/api/widgets", widgetsRoutes(db));
 
 
@@ -52,10 +51,10 @@ app.use('/api/users', usersRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//     res.render("index");
+// });
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+    console.log(`Example app listening on port ${PORT}`);
 });
