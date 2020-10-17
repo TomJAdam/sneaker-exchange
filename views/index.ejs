@@ -1,111 +1,227 @@
 <html>
 
 <head>
-    <title>Sneakers template</title>
+    <<<<<<< HEAD <title>Sneakers template</title>
+        =======
+        <title>SneakerExchange</title>
+        >>>>>>> 23bf6f5ef68e76eaea5383e8ed6d953d094b7905
 
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Karma", sans-serif
-        }
+        <link rel="stylesheet" href="/styles/layout.css">
 
-        .w3-bar-block .w3-bar-item {
-            padding: 20px
-        }
-    </style>
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+
+
+        </style>
 </head>
 
 <body>
 
-
-    <!-- Top menu -->
-    <header class="w3-row-padding w3-padding-32">
+    <!-- Top Nav -->
+    <nav>
         <div class="w3-top">
-            <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            <div class="w3-white w3-xlarge">
+                <div class="w3-bar">
+                    <a href="#" id="logo" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-left w3-padding-16">Sneaker<b>Exchange</b></a>
+                    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Search</a>
 
-                <div class="w3-left w3-padding-16">Sneakers</div>
-                <div class="w3-right w3-padding-16">login</div>
-                <div class="w3-center w3-padding-16">logo</div>
+                    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Login</a>
+                    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Register</a>
+                </div>
+
             </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="w3-container w3-display-middle">
+            <h3><b>stay fresh, buy sneakers</b></h3>
         </div>
     </header>
 
-    <!-- !PAGE CONTENT! -->
-    <main class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-        <!-- Photo Grid-->
-        <div class="w3-row-padding w3-padding-16 w3-center" id='list-grid'>
-            <div class="w3-quarter">
-                <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak" style="width:100%">
-                <h3>Jordan 1 Retro</h3>
-                <p>Price</p>
-            </div>
+
+    <!-- search bar -->
+    <div class="search-bar">
+        <div class="form-inputs">
+            <form action="/sneakers" method="get">
+                <div class="w3-container w3-cell">
+                    <label for="brand-search">Brand:</label>
+                    <input type="text" name="brand" placeholder="Adidas..">
+                </div>
+
+                <div class="w3-container w3-cell">
+                    <label for="min-price-search">Min Price:</label>
+                    <input type="number" name="min_price" placeholder="$$$...">
+
+                </div>
+
+                <div class="w3-container w3-cell">
+                    <label for="max-price-search">Max Price:</label>
+                    <input type="number" name="max_price" placeholder="$$$...">
+                </div>
+
+                <<<<<<< HEAD <!-- Top menu -->
+                    <header class="w3-row-padding w3-padding-32">
+                        <div class="w3-top">
+                            <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+
+                                <div class="w3-left w3-padding-16">Sneakers</div>
+                                <div class="w3-right w3-padding-16">login</div>
+                                <div class="w3-center w3-padding-16">logo</div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- !PAGE CONTENT! -->
+                    <main class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+                        <!-- Photo Grid-->
+                        <div class="w3-row-padding w3-padding-16 w3-center" id='list-grid'>
+                            <div class="w3-quarter">
+                                <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak" style="width:100%">
+                                <h3>Jordan 1 Retro</h3>
+                                <p>Price</p>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="w3-center w3-padding-32">
+                            <div class="w3-bar">
+                                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+                                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+                                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+                            </div>
+                            =======
+
+                            <div class="w3-container w3-cell">
+                                <label for="size-search">Size:</label>
+                                <input type="number" name="size" placeholder="9...">
+                            </div>
+
+                            <div class="w3-container w3-cell">
+                                <label for="size-city">City:</label>
+                                <input type="text" name="city" placeholder="Vancouver...">
+                            </div>
+                        </div>
+                        <div class="w3-container w3-cell">
+                            <button class="w3-button w3-white w3-border w3-border-green w3-round-large">Search</button>
+                        </div>
+            </form>
         </div>
 
-        <!-- Pagination -->
-        <div class="w3-center w3-padding-32">
-            <div class="w3-bar">
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-            </div>
-        </div>
+        <!-- !PAGE CONTENT! -->
+        <main class="w3-main w3-content w3-padding">
+
+            <!-- First Photo Grid-->
+            <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-quarter">
+                    <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                    <h3>Jordan 1 Retro</h3>
+                    <p>Price</p>
+                </div>
+                <div class="w3-quarter">
+                    <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                    <h3>Jordan 1 Retro</h3>
+                    <p>Price</p>
+                </div>
+                <div class="w3-quarter">
+                    <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                    <h3>Jordan 1 Retro</h3>
+                    <p>Price</p>
+                </div>
+                <div class="w3-quarter">
+                    <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                    <h3>Jordan 1 Retro</h3>
+                    <p>Price</p>
+                </div>
+
+                <!-- Second Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center">
+                    <div class="w3-quarter">
+                        <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                        <h3>Jordan 1 Retro</h3>
+                        <p>Price</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                        <h3>Jordan 1 Retro</h3>
+                        <p>Price</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                        <h3>Jordan 1 Retro</h3>
+                        <p>Price</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img src="https://stockx.imgix.net/Air-Jordan-1-Retro-High-Lucky-Green-W.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1600960780&w=1000" alt="Steak">
+                        <h3>Jordan 1 Retro</h3>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="w3-center w3-padding-32">
+                    <div class="w3-bar">
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+                        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a> >>>>>>> 23bf6f5ef68e76eaea5383e8ed6d953d094b7905
+                    </div>
 
 
-    </main>
-    <hr>
+        </main>
+        <<<<<<< HEAD <hr>
+            ======= >>>>>>> 23bf6f5ef68e76eaea5383e8ed6d953d094b7905
 
-    <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
-        <div class="w3-third">
-            <h3>FOOTER</h3>
-            <p>We can add anything here</p>
+            <!-- Footer -->
+            <footer class="w3-row-padding w3-padding-32">
+                <div class="w3-third">
+                    <h3>FOOTER</h3>
+                    <p>We can add anything here</p>
 
-        </div>
+                </div>
 
-        <div class="w3-third">
-            <h3>Made BY: </h3>
-            <ul class="w3-ul w3-hoverable">
-                <li class="w3-padding-16">
+                <div class="w3-third">
+                    <h3>Made BY: </h3>
+                    <ul class="w3-ul w3-hoverable">
+                        <li class="w3-padding-16">
 
-                    <span class="w3-large">Tom</span><br>
+                            <span class="w3-large">Tom</span><br>
 
-                </li>
-                <li class="w3-padding-16">
+                        </li>
+                        <li class="w3-padding-16">
 
-                    <span class="w3-large">Calvin</span><br>
+                            <span class="w3-large">Calvin</span><br>
 
-                </li>
-                <li class="w3-padding-16">
+                        </li>
+                        <li class="w3-padding-16">
 
-                    <span class="w3-large">Sher</span><br>
+                            <span class="w3-large">Sher</span><br>
 
-                </li>
-            </ul>
-        </div>
+                        </li>
+                    </ul>
+                </div>
 
+            </footer>
 
-    </footer>
+            <!-- End page content -->
+            <<<<<<< HEAD </div>
 
-    <!-- End page content -->
-    </div>
-
-    <!-- <script>
+                <!-- <script>
         // Script to open and close sidebar
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
@@ -115,7 +231,8 @@
             document.getElementById("mySidebar").style.display = "none";
         }
     </script> -->
-    <script src="public/scripts/index.js"></script>
+                <script src="public/scripts/index.js"></script>
+                ======= >>>>>>> 23bf6f5ef68e76eaea5383e8ed6d953d094b7905
 
 </body>
 
