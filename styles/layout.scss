@@ -2,7 +2,7 @@
 
 // body
 body {
-  font-family: 'Krona One', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 header {
@@ -38,6 +38,9 @@ header {
 nav {
   width: 100%;
   color: white;
+  #logo {
+    font-family: 'Krona One', sans-serif;
+  }
 }
 
 

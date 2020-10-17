@@ -1,5 +1,5 @@
 body {
-  font-family: 'Krona One', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 header {
@@ -35,6 +35,10 @@ header .w3-container {
 nav {
   width: 100%;
   color: white;
+}
+
+nav #logo {
+  font-family: 'Krona One', sans-serif;
 }
 
 .w3-bar-block .w3-bar-item {
