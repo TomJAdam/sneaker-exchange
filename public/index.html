@@ -17,7 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
-
+    <script src="https://kit.fontawesome.com/85dbc41dda.js" crossorigin="anonymous"></script>
 
     </style>
 </head>
@@ -30,7 +30,7 @@
             <div class="w3-white w3-xlarge">
                 <div class="w3-bar">
                     <a href="#" id="logo" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-left w3-padding-16">Sneaker<b>Exchange</b></a>
-                    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Search</a>
+                    <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Search</a>
 
                     <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Login</a>
                     <a href="#" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Register</a>
@@ -42,7 +42,7 @@
 
     <header>
         <div class="w3-container w3-display-middle">
-            <h3><b>stay fresh, buy sneakers</b></h3>
+            <h2><b>stay fresh, buy sneakers</b></h3>
         </div>
     </header>
 
@@ -52,36 +52,37 @@
         <div class="form-inputs">
             <form action="/sneakers" method="get">
                 <div class="w3-container w3-cell">
-                    <label for="brand-search">Brand:</label>
-                    <input type="text" name="brand" placeholder="Adidas..">
+                    <label for="brand-search"></label>
+                    <input type="text" name="brand" placeholder="brand..">
                 </div>
 
                 <div class="w3-container w3-cell">
-                    <label for="min-price-search">Min Price:</label>
-                    <input type="number" name="min_price" placeholder="$$$...">
+                    <label for="min-price-search"></label>
+                    <input type="number" name="min_price" placeholder="min price...">
 
                 </div>
 
                 <div class="w3-container w3-cell">
-                    <label for="max-price-search">Max Price:</label>
-                    <input type="number" name="max_price" placeholder="$$$...">
-                </div>
-
-
-                <div class="w3-container w3-cell">
-                    <label for="size-search">Size:</label>
-                    <input type="number" name="size" placeholder="9...">
+                    <label for="max-price-search"></label>
+                    <input type="number" name="max_price" placeholder="max price...">
                 </div>
 
                 <div class="w3-container w3-cell">
-                    <label for="size-city">City:</label>
-                    <input type="text" name="city" placeholder="Vancouver...">
+                    <label for="size-search"></label>
+                    <input type="number" name="size" placeholder="size...">
                 </div>
-        </div>
-        <div class="w3-container w3-cell">
-            <button class="w3-button w3-white w3-border w3-border-green w3-round-large">Search</button>
-        </div>
-        </form>
+
+                <div class="w3-container w3-cell">
+                    <label for="size-city"></label>
+                    <input type="text" name="city" placeholder="city...">
+                </div>
+              </div>
+                <div class="w3-container w3-cell w3-display-right">
+                    <button class="w3-button w3-white w3-large w3-border"><b>Search</b></button>
+                    <i id="hide-button" class="fas fa-times-circle"></i>
+
+                </div>
+      </form>
     </div>
 
     <!-- !PAGE CONTENT! -->
@@ -146,6 +147,7 @@
     <!-- IMPORT SCRIPT -->
     <script src="./vendor/jquery-3.0.0.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/search.js"></script>
 </body>
 
 </html>

@@ -31,27 +31,44 @@ nav {
 
 // search bar
 .search-bar {
+  display: none;
   background-color: #3B5C3F;
   border-top: solid 5px white;
   color: white;
   width: 100%;
-  padding: 2em;
+  padding: 1.5em;
   position: sticky;
-  display: flex;
-  justify-content: center;
+
   .w3-container w3-cell {
     margin: 1em;
   }
+  .form-inputs {
+    max-width: 80%;
+  }
   input {
-    border-radius: 5px;
-    border: 1px solid #3B5C3F;
-    width: 100px;
+    border: none;
+    width: 100%;
+    height: 40px;
     padding: 3px;
     margin: 3px;
+    padding-left: 10px;
+    font-size: 150%;
   }
   button {
-    margin-left: 2em;
+    margin-right: 3em;
+    margin-bottom: .85em;
   }
+  #hide-button {
+    font-size: 36px;
+    color:white;
+    cursor: pointer;
+    margin-right: .5em;
+  }
+
+  #hide-button:hover {
+    color: lightgray;
+  }
+
 }
 
 // bottom page nav
