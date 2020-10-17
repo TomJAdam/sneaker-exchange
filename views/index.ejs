@@ -49,6 +49,7 @@
 
   <!-- search bar -->
   <div class="search-bar">
+    <div class="form-inputs">
     <form action="/sneakers" method="get">
       <div class="w3-container w3-cell">
         <label for="brand-search">Brand:</label>
@@ -56,11 +57,16 @@
       </div>
 
       <div class="w3-container w3-cell">
-        <label for="min-price-search">Minimum Price:</label>
+        <label for="min-price-search">Min Price:</label>
         <input type="number" name="min_price" placeholder="$$$...">
-        <label for="max-price-search">Maximum Price:</label>
+
+      </div>
+
+      <div class="w3-container w3-cell">
+        <label for="max-price-search">Max Price:</label>
         <input type="number" name="max_price" placeholder="$$$...">
       </div>
+
 
       <div class="w3-container w3-cell">
         <label for="size-search">Size:</label>
@@ -68,8 +74,12 @@
       </div>
 
       <div class="w3-container w3-cell">
-          <button>Search</button>
-          <a id="search-property-form__cancel" href="#">Cancel</a>
+        <label for="size-city">City:</label>
+        <input type="text" name="city" placeholder="Vancouver...">
+      </div>
+    </div>
+      <div class="w3-container w3-cell">
+          <button class="w3-button w3-white w3-border w3-border-green w3-round-large">Search</button>
       </div>
     </form>
   </div>
