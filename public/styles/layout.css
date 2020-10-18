@@ -13,9 +13,16 @@ header {
 
 header .w3-container {
   color: white;
-  background-color: lightgray;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 2.5em;
   border: 5px solid white;
+  margin-right: 5em;
+  height: 37%;
+  text-align: right;
+}
+
+header .w3-container p {
+  font-size: 120%;
 }
 
 nav {
