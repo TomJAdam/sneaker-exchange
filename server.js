@@ -10,6 +10,7 @@ const sass = require("node-sass-middleware");
 const app = express();
 const morgan = require('morgan');
 
+app.set("view engine", "ejs");
 // PG database client / connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -46,8 +47,8 @@ app.use('/api/sneakers', sneakersRoutes);
 
 
 // Note: mount other resources here, using the same pattern above
-
-
+const userRoutes = require('./routes/users')(dataHelpers);
+app.use('/user', userRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).

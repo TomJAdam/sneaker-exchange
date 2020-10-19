@@ -18,9 +18,19 @@ module.exports = (dataHelpers) => {
       .catch(err => {
         res
           .status(500)
-          .json({ error: err.message });
+          .json({
+            error: err.message
+          });
       });
   });
+
+  router.get('/login', (req, res) => {
+    res.render('login');
+  });
+  router.get('/register', (req, res) => {
+    res.render('register');
+  });
+
 
   // send back data to different listing pages
   router.get('/:page', (req, res) => {
@@ -31,7 +41,9 @@ module.exports = (dataHelpers) => {
       .catch(err => {
         res
           .status(500)
-          .json({ error: err.message });
+          .json({
+            error: err.message
+          });
       });
   });
 
