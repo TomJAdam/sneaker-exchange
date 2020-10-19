@@ -37,7 +37,23 @@ module.exports = (dataHelpers) => {
             });
     });
 
-
+    router.post('/', (req, res) => {
+        const dataset = {};
+        dataHelpers.sneakersListings(null, req.body)
+            .then(data => {
+                dataset.count = data[0].count;
+                return dataHelpers.sneakersListings(20, req.body);
+            })
+            .then(data => {
+                dataset.data = data;
+                res.send(dataset);
+            })
+            .catch(err => {
+                res
+                    .status(500)
+                    .json({ error: err.message });
+            });
+    });
 
     return router;
 };

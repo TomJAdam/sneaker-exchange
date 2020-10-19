@@ -32,6 +32,7 @@ $(() => {
     // };
 
 
+
     window.queries = {
         listSneakers
     };
