@@ -37,8 +37,30 @@ module.exports = (dataHelpers) => {
             });
     });
 
+<<<<<<< HEAD
     // router.get("/login", (req, res) => {
     //   //get for login page
+=======
+    //search
+    router.post('/', (req, res) => {
+      const dataset = {};
+      dataHelpers.sneakersListings()
+      .then(data => {
+        dataset.count = data[0].count;
+        return dataHelpers.sneakersListings(20, req.body);
+      })
+      .then(data => {
+        dataset.data = data;
+        res.send(dataset);
+    })
+    .catch(err => {
+        res
+            .status(500)
+            .json({ error: err.message });
+    });
+    })
+
+>>>>>>> 8137e3ec8e5e21c2462dc96c5908fa9c55da0a7e
 
 
     //   res.render("login.html");
