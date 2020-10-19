@@ -94,11 +94,40 @@ nav {
   }
 }
 
+// Sneaker grid
 .main-grid{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   .w3-quarter {
-    justify-self: center;
+    width: 90%;
+    height: 90%;
+    border: 1px solid lightgray;
+    background-color: rgb(238, 237, 237);
+    img {
+      max-height: 60%;
+    }
+    &:hover {
+      transform: scale(1.05);
+      border: 1px solid darkgray;
+    }
+    .info {
+      margin: .5em .5em;
+    }
+    footer {
+      display: flex;
+      justify-content: center;
+      i {
+        margin-left: .5em;
+        margin-top: .3em;
+        font-size: 160%;
+        color: rgba(224, 84, 84, 0.872);
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.05);
+          color: rgb(227, 51, 51);
+        }
+      }
+    }
   }
 }
