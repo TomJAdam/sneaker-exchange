@@ -1,8 +1,26 @@
 $(() => {
 
-    const listSneakers = (limit, currentPage = 1) => {
+    const listSneakers = (limit, currentPage = 1, filters) => {
         $.get({
-                url: `api/sneakers?page=${currentPage}`,
+                url: `api/sneakers?${filters ? filters + '&' : ''}&page=${currentPage}`,
+            })
+            .then(res => {
+                console.log(filters);
+                const { count, data } = res;
+                const lastPage = Math.ceil(count / limit);
+                $('#list-grid').empty();
+                data.forEach(row => {
+                    appendSneakers(row);
+                });
+                $('#page-anchor').empty();
+                pagination(currentPage, lastPage, filters);
+            });
+    };
+
+    const sortSneakers = (limit, filters) => {
+        $.post({
+                url: "api/sneakers",
+                data: filters
             })
             .then(res => {
                 const { count, data } = res;
@@ -12,29 +30,15 @@ $(() => {
                     appendSneakers(row);
                 });
                 $('#page-anchor').empty();
-                pagination(currentPage, lastPage);
+                pagination(1, lastPage, filters);
             });
     };
-
-    // const sortSneakers = (formData, limit) => {
-    //     const data = formData.serialize();
-    //     $.post({
-    //             url: 'api/sneakers',
-    //             data
-    //         })
-    //         .then(res => {
-    //             const page = Math.ceil(res.length / limit);
-    //             res.forEach(data => {
-    //                 appendSneakers(data);
-    //             });
-    //         })
-    //         .catch(err => console.log(`Found Error: `, err));
-    // };
 
 
 
     window.queries = {
-        listSneakers
+        listSneakers,
+        sortSneakers
     };
 
 

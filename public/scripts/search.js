@@ -19,22 +19,9 @@ $(() => {
 
     $(".search-bar form").submit(function(e) {
         e.preventDefault();
-        const data = $(this).serialize();
+        const filters = $(this).serialize();
         $('.search-bar form').trigger("reset");
-        $.post({
-                url: "api/sneakers",
-                data: data
-            })
-            .then(res => {
-                const { count, data } = res;
-                // const lastPage = Math.ceil(count / limit);
-                $('#list-grid').empty();
-                data.forEach(row => {
-                        appendSneakers(row);
-                    })
-                    // $('#page-anchor').empty();
-                    // pagination(currentPage, lastPage);
-            });
+        queries.sortSneakers(20, filters);
 
     });
 
