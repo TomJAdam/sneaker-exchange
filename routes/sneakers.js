@@ -5,23 +5,30 @@ const router = express.Router();
 
 module.exports = (dataHelpers) => {
     //an example to send data back to client
-    router.get("/", (req, res) => {
-        dataHelpers.dealingWithData()
-            .then(data => {
-                res.send(data);
-            })
-            .catch(err => {
-                res
-                    .status(500)
-                    .json({ error: err.message });
-            });
-    });
+    // router.get("/", (req, res) => {
+    //   const dataset = {};
+    //     dataHelpers.dealingWithData()
+    //         .then(data => {
+    //             res.send(data);
+    //         })
+    //         .catch(err => {
+    //             res
+    //                 .status(500)
+    //                 .json({ error: err.message });
+    //         });
+    // });
 
     // send back data to different listing pages
-    router.get('/:page', (req, res) => {
-        dataHelpers.sneakersListings({}, 5, req.params.page)
+    router.get('/', (req, res) => {
+        const dataset = {};
+        dataHelpers.sneakersListings()
             .then(data => {
-                res.send(data);
+                dataset.count = data[0].count;
+                return dataHelpers.sneakersListings(20, req.query);
+            })
+            .then(data => {
+                dataset.data = data;
+                res.send(dataset);
             })
             .catch(err => {
                 res
