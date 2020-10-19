@@ -37,7 +37,13 @@ module.exports = (dataHelpers) => {
             });
     });
 
+    // router.get("/login", (req, res) => {
+    //   //get for login page
 
+
+    //   res.render("login.html");
+
+    // });
 
     return router;
 };
