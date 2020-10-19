@@ -15,11 +15,11 @@ header {
   .w3-container {
     color: white;
     background-color:rgba(0, 0, 0, 0.5);
-
     padding: 2.5em;
     border: 5px solid white;
     margin-right: 5em;
-    height: 37%;
+    // height: auto;
+    // width: auto;
     text-align: right;
     p {
       font-size: 120%;
@@ -30,7 +30,6 @@ header {
 // top page nav
 nav {
   width: 100%;
-  color: white;
   #logo {
     font-family: 'Krona One', sans-serif;
   }
@@ -50,7 +49,7 @@ nav {
     margin: 1em;
   }
   .form-inputs {
-    max-width: 85%;
+    max-width: 83.5%;
   }
   input {
     border: none;
@@ -60,6 +59,7 @@ nav {
     margin: 3px;
     padding-left: 10px;
     font-size: 150%;
+    outline: none;
   }
   button {
     margin-right: 1.5em;

@@ -17,7 +17,6 @@ header .w3-container {
   padding: 2.5em;
   border: 5px solid white;
   margin-right: 5em;
-  height: 37%;
   text-align: right;
 }
 
@@ -27,7 +26,6 @@ header .w3-container p {
 
 nav {
   width: 100%;
-  color: white;
 }
 
 nav #logo {
@@ -49,7 +47,7 @@ nav #logo {
 }
 
 .search-bar .form-inputs {
-  max-width: 85%;
+  max-width: 83.5%;
 }
 
 .search-bar input {
@@ -60,6 +58,7 @@ nav #logo {
   margin: 3px;
   padding-left: 10px;
   font-size: 150%;
+  outline: none;
 }
 
 .search-bar button {
