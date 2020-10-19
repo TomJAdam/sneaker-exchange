@@ -62,7 +62,7 @@ nav #logo {
 
 .search-bar button {
   margin-right: 1.5em;
-  margin-bottom: .85em;
+  margin-bottom: .55em;
   height: 40px;
   outline: none;
 }
@@ -133,4 +133,15 @@ nav #logo {
 .main-grid .w3-quarter footer i:hover {
   transform: scale(1.05);
   color: #e33333;
+}
+
+.post-item {
+  display: none;
+  width: 90%;
+  margin: 1em;
+}
+
+.post-item input,
+.post-item label {
+  margin: .25em;
 }
