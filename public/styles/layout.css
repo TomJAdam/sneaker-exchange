@@ -67,11 +67,4 @@ nav #logo {
   width: 100%;
 }
 
-.main-grid{
 
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-
-}
