@@ -24,7 +24,6 @@ $(() => {
       data: data
     })
     .then(res => {
-    console.log('res :', res);
       const { count, data } = res;
       // const lastPage = Math.ceil(count / limit);
       $('#list-grid').empty();
