@@ -91,18 +91,10 @@ nav #logo {
   width: 100%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 8137e3ec8e5e21c2462dc96c5908fa9c55da0a7e
 .main-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-<<<<<<< HEAD
-=======
 }
 
 .main-grid .w3-quarter {
@@ -141,6 +133,4 @@ nav #logo {
 .main-grid .w3-quarter footer i:hover {
   transform: scale(1.05);
   color: #e33333;
->>>>>>> 8137e3ec8e5e21c2462dc96c5908fa9c55da0a7e
 }
->>>>>>> header
