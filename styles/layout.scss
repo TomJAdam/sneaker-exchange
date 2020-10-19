@@ -37,7 +37,7 @@ nav {
 
 // search bar
 .search-bar {
-  display: none;
+  // display: none;
   background-color: #3b455c;
   border-top: solid 5px white;
   color: white;
@@ -65,7 +65,7 @@ nav {
     margin-right: 1.5em;
     margin-bottom: .85em;
     height: 40px;
-
+    outline: none;
   }
   #hide-button {
     font-size: 36px;
@@ -95,10 +95,10 @@ nav {
 }
 
 .main-grid{
-
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-
+  .w3-quarter {
+    justify-self: center;
+  }
 }

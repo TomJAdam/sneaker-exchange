@@ -1,0 +1,9 @@
+#pagination .w3-bar .ellipsis {
+  color: #000 !important;
+  cursor: default;
+}
+
+#pagination .w3-bar .ellipsis:hover {
+  color: none !important;
+  background-color: #fff !important;
+}
