@@ -31,6 +31,10 @@ module.exports = (dataHelpers) => {
     res.render('register');
   });
 
+  router.get('/login/:id', (req, res) => {
+    req.session.user_id = req.params.id;
+    res.redirect('/');
+    });
 
   // send back data to different listing pages
   router.get('/:page', (req, res) => {
