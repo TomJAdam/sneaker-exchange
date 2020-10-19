@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel=“stylesheet” href=“/styles/post_items.css”>
+
     <link rel="stylesheet" href="/styles/layout.css">
 
     <link rel="stylesheet" href="/styles/pagination.css">
@@ -49,6 +53,46 @@
         </div>
     </header>
 
+    <!-- Post sneaker form! -->
+    <div class="post-item">
+        <h3>post sneakers</h3>
+        <form class="form-group mb-2" action="/login" method="POST">
+            <div>
+
+                <label for="title">Title</label>
+                <input class="form-control" type="text" name="title" placeholder="title...">
+
+                <label for="brand">Brand</label>
+                <input class="form-control" type="text" name="brand" placeholder="brand...">
+
+                <label for="brand">Price</label>
+                <input class="form-control" type="number" name="price" placeholder="price...">
+
+                <label for="size">Size</label>
+                <input class="form-control" type="number" name="size" placeholder="size...">
+
+                <label for="model_year">Model year</label>
+                <input class="form-control" type="number" name="model_year" placeholder="year...">
+
+                <label for="exampleFormControlFile1">thumbnail photo</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+
+                <label for="exampleFormControlFile1">main photo</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+
+                <label for="country">country</label>
+                <input class="form-control" type="text" name="country" placeholder="country...">
+
+                <label for="city">city</label>
+                <input class="form-control" type="text" name="city" placeholder="city...">
+
+                <label for="province">state/province</label>
+                <input class="form-control" type="text" name="province" placeholder="state/province...">
+
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+    </div>
 
     <!-- search bar -->
     <div class="search-bar">
@@ -83,7 +127,6 @@
         <div class="w3-container w3-cell w3-display-right">
             <button class="w3-button w3-white w3-large w3-border"><b>search</b></button>
             <i id="hide-button" class="fas fa-times-circle"></i>
-
         </div>
         </form>
     </div>

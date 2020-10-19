@@ -63,7 +63,7 @@ nav {
   }
   button {
     margin-right: 1.5em;
-    margin-bottom: .85em;
+    margin-bottom: .55em;
     height: 40px;
     outline: none;
   }
@@ -129,5 +129,16 @@ nav {
         }
       }
     }
+  }
+}
+
+// post sneakers form
+.post-item {
+  display: none;
+  width: 90%;
+  margin: 1em;
+  input,
+  label {
+    margin: .25em;
   }
 }

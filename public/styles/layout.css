@@ -62,7 +62,7 @@ nav #logo {
 
 .search-bar button {
   margin-right: 1.5em;
-  margin-bottom: .85em;
+  margin-bottom: .55em;
   height: 40px;
   outline: none;
 }
@@ -134,3 +134,17 @@ nav #logo {
   transform: scale(1.05);
   color: #e33333;
 }
+<<<<<<< HEAD
+=======
+
+.post-item {
+  display: none;
+  width: 90%;
+  margin: 1em;
+}
+
+.post-item input,
+.post-item label {
+  margin: .25em;
+}
+>>>>>>> 5450d3a472b4c1f43d87f70729e6d61bdd74bbc9
