@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <!-- Top Nav -->
     <nav>
         <div class="w3-top">
@@ -98,16 +97,8 @@
 
         <!-- Pagination -->
         <div class="w3-center w3-padding-32" id='pagination'>
-            <div class="w3-bar">
-                <a href="#" class="w3-bar-item w3-button w3-hover-black" id='prev'>«</a>
-                <!-- <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black" id='front-ellipsis'>...</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black" id='end-ellipsis'>...</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">25</a> -->
-                <a href="#" class="w3-bar-item w3-button w3-hover-black" id='next'>»</a>
+            <div class="w3-bar" id='page-anchor'>
+                <!-- elements generated from ajax -->
             </div>
         </div>
 
@@ -150,6 +141,10 @@
 
     <!-- IMPORT SCRIPT -->
     <script src="./vendor/jquery-3.0.0.js"></script>
+    <script src="./scripts/helpers.js"></script>
+    <script src="./scripts/sneakers_list.js"></script>
+    <script src="./scripts/pagination.js"></script>
+    <script src="./scripts/app.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
