@@ -5,7 +5,6 @@ $(() => {
                 url: `api/sneakers?${filters ? filters + '&' : ''}&page=${currentPage}`,
             })
             .then(res => {
-                console.log(filters);
                 const { count, data } = res;
                 const lastPage = Math.ceil(count / limit);
                 $('#list-grid').empty();
