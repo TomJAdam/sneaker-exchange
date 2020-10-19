@@ -13,14 +13,19 @@ header {
 
 header .w3-container {
   color: white;
-  background-color: lightgray;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 2.5em;
   border: 5px solid white;
+  margin-right: 5em;
+  text-align: right;
+}
+
+header .w3-container p {
+  font-size: 120%;
 }
 
 nav {
   width: 100%;
-  color: white;
 }
 
 nav #logo {
@@ -28,30 +33,49 @@ nav #logo {
 }
 
 .search-bar {
-  background-color: #3B5C3F;
+  background-color: #3b455c;
   border-top: solid 5px white;
   color: white;
   width: 100%;
-  padding: 2em;
+  padding: 1.5em;
   position: sticky;
-  display: flex;
-  justify-content: center;
 }
 
 .search-bar .w3-container w3-cell {
   margin: 1em;
 }
 
+.search-bar .form-inputs {
+  max-width: 83.5%;
+}
+
 .search-bar input {
-  border-radius: 5px;
-  border: 1px solid #3B5C3F;
-  width: 100px;
+  border: none;
+  width: 100%;
+  height: 40px;
   padding: 3px;
   margin: 3px;
+  padding-left: 10px;
+  font-size: 150%;
+  outline: none;
 }
 
 .search-bar button {
-  margin-left: 2em;
+  margin-right: 1.5em;
+  margin-bottom: .85em;
+  height: 40px;
+  outline: none;
+}
+
+.search-bar #hide-button {
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  margin-right: 1.5em;
+}
+
+.search-bar #hide-button:hover {
+  color: lightgray;
 }
 
 .w3-bar-block .w3-bar-item {
@@ -71,4 +95,42 @@ nav #logo {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.main-grid .w3-quarter {
+  width: 90%;
+  height: 90%;
+  border: 1px solid lightgray;
+  background-color: #eeeded;
+}
+
+.main-grid .w3-quarter img {
+  max-height: 60%;
+}
+
+.main-grid .w3-quarter:hover {
+  transform: scale(1.05);
+  border: 1px solid darkgray;
+}
+
+.main-grid .w3-quarter .info {
+  margin: .5em .5em;
+}
+
+.main-grid .w3-quarter footer {
+  display: flex;
+  justify-content: center;
+}
+
+.main-grid .w3-quarter footer i {
+  margin-left: .5em;
+  margin-top: .3em;
+  font-size: 160%;
+  color: rgba(224, 84, 84, 0.872);
+  cursor: pointer;
+}
+
+.main-grid .w3-quarter footer i:hover {
+  transform: scale(1.05);
+  color: #e33333;
 }

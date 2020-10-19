@@ -14,16 +14,22 @@ header {
   z-index: 99;
   .w3-container {
     color: white;
-    background-color: lightgray;
+    background-color:rgba(0, 0, 0, 0.5);
     padding: 2.5em;
     border: 5px solid white;
+    margin-right: 5em;
+    // height: auto;
+    // width: auto;
+    text-align: right;
+    p {
+      font-size: 120%;
+    }
   }
 }
 
 // top page nav
 nav {
   width: 100%;
-  color: white;
   #logo {
     font-family: 'Krona One', sans-serif;
   }
@@ -31,27 +37,47 @@ nav {
 
 // search bar
 .search-bar {
-  background-color: #3B5C3F;
+  // display: none;
+  background-color: #3b455c;
   border-top: solid 5px white;
   color: white;
   width: 100%;
-  padding: 2em;
+  padding: 1.5em;
   position: sticky;
-  display: flex;
-  justify-content: center;
+
   .w3-container w3-cell {
     margin: 1em;
   }
+  .form-inputs {
+    max-width: 83.5%;
+  }
   input {
-    border-radius: 5px;
-    border: 1px solid #3B5C3F;
-    width: 100px;
+    border: none;
+    width: 100%;
+    height: 40px;
     padding: 3px;
     margin: 3px;
+    padding-left: 10px;
+    font-size: 150%;
+    outline: none;
   }
   button {
-    margin-left: 2em;
+    margin-right: 1.5em;
+    margin-bottom: .85em;
+    height: 40px;
+    outline: none;
   }
+  #hide-button {
+    font-size: 36px;
+    color:white;
+    cursor: pointer;
+    margin-right: 1.5em;
+  }
+
+  #hide-button:hover {
+    color: lightgray;
+  }
+
 }
 
 // bottom page nav
@@ -68,11 +94,40 @@ nav {
   }
 }
 
+// Sneaker grid
 .main-grid{
-
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-
+  .w3-quarter {
+    width: 90%;
+    height: 90%;
+    border: 1px solid lightgray;
+    background-color: rgb(238, 237, 237);
+    img {
+      max-height: 60%;
+    }
+    &:hover {
+      transform: scale(1.05);
+      border: 1px solid darkgray;
+    }
+    .info {
+      margin: .5em .5em;
+    }
+    footer {
+      display: flex;
+      justify-content: center;
+      i {
+        margin-left: .5em;
+        margin-top: .3em;
+        font-size: 160%;
+        color: rgba(224, 84, 84, 0.872);
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.05);
+          color: rgb(227, 51, 51);
+        }
+      }
+    }
+  }
 }
