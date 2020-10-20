@@ -64,10 +64,10 @@ app.listen(PORT, () => {
 });
 
 // const users = {};
-// function generateRandomString(bod) {
-//   //function to generate random numbers
-//   return Math.random().toString(20).substr(2, 6);
-// }
+function generateRandomString(bod) {
+  //function to generate random numbers
+  return Math.random().toString(20).substr(2, 6);
+}
 
 // app.post("/register", (req, res) => {
 //   //user makes a new userid and password
