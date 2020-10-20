@@ -33,21 +33,26 @@ module.exports = (dataHelpers) => {
   const login = (email, password) => {
     return dataHelpers.getUserWithEmail(email)
     .then(user => {
+    console.log('user :', user);
       if (password === user.password) {
         return user;
       }
       return null;
     })
+    .catch(console.log)
   }
 
   router.post('/login', (req, res) => {
-    const {email, password} = req.body;
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log('req.body :', req.body);
     login(email, password)
       .then(user => {
         if (!user) {
           res.send({error: "error"});
           return;
         }
+        console.log('logged in!')
         req.session.userId = user.id;
         res.send({user: {name: user.name, email: user.email, phone: user.phone, id: user.id}})
       })
@@ -63,12 +68,14 @@ module.exports = (dataHelpers) => {
   router.post('/register', (req, res) => {
     dataHelpers.addUser(req.body)
     .then((user) => {
+    console.log('user :', user);
       if (!user) {
         res.send({error: "error"});
         return;
       }
-      res.session.userId = user.id
-      res.send("successful user creation")
+      req.session.userId = user.id
+      res.send(200);
+      console.log("successful user creation")
     })
   })
 

@@ -117,14 +117,14 @@ function generateRandomString(bod) {
 
 // module.exports = getUserByEmail;
 
-app.post('/login', (req, res) => {
- const {email, password} = req.body;
- const newID = generateRandomString();
- req.session.userId = newID;
- console.log("new session: ", req.session.userId);
- console.log("email: ", email);
- console.log("pass: ", password);
- res.redirect('/');
+// app.post('/login', (req, res) => {
+//  const {email, password} = req.body;
+//  const newID = generateRandomString();
+//  req.session.userId = newID;
+//  console.log("new session: ", req.session.userId);
+//  console.log("email: ", email);
+//  console.log("pass: ", password);
+//  res.redirect('/');
 
-});
+// });
 
