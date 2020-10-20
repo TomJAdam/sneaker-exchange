@@ -42,9 +42,6 @@ module.exports = (dataHelpers) => {
                     .json({ error: err.message });
             });
     });
-<<<<<<< HEAD
-=======
-    })
 
     //post to sneaker database
     router.post('/new', (req, res) => {
@@ -55,14 +52,13 @@ module.exports = (dataHelpers) => {
     .catch(err => {
       console.log('err:', err)
     })
-    })
+    });
 
 
 
     //   res.render("login.html");
 
     // });
->>>>>>> new-stuff
 
     return router;
 };
