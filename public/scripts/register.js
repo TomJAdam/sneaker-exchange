@@ -7,7 +7,10 @@ $(() => {
     $("main").toggle();
 
     const $registerForm = $(`
+    <div class="signup-header">
     <h3>Create Account</h3>
+    <i id="hide-button" class="fas fa-times-circle"></i>
+    </div>
     <form id="register-form" class="form-group mb-2" action="/register" method="POST">
       <div>
 
@@ -45,6 +48,12 @@ $(() => {
       $("main").toggle();
       $(".login-register-forms").empty();
     })
+  })
+
+  //exit button
+  $(document).on("click", "#hide-button", () => {
+    $("main").toggle();
+    $(".login-register-forms").empty();
   })
 
 })
