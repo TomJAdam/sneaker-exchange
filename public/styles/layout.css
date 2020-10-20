@@ -143,8 +143,14 @@ nav a:hover {
 
 #post-sneaker .post-sneaker-header {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   background-color: #21d192;
+}
+
+#post-sneaker .post-sneaker-header i {
+  margin: 2.2em;
+  font-size: 150%;
 }
 
 #post-sneaker .post-item {

@@ -142,6 +142,14 @@ nav {
     justify-content: space-between;
     width: 100%;
     background-color: #21d192;
+    i {
+      margin: 2.2em;
+      font-size: 150%;
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
   }
   .post-item{
     display: none;
