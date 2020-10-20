@@ -5,7 +5,10 @@ $(() => {
     $("main").toggle();
 
     const $loginForm = $(`
+    <div class="signup-header">
     <h3>Login</h3>
+    <i id="hide-button" class="fas fa-times-circle"></i>
+    </div>
       <form id="login-form" class="form-group mb-2" action="/login" method="POST">
         <div>
 
@@ -39,6 +42,12 @@ $(() => {
       $("main").toggle();
       $(".login-register-forms").empty();
     })
+  })
+
+  //exit button ! needs work !
+  $(document).on("click", "#hide-button", () => {
+      $("main").show();
+      $(".login-register-forms").empty();
   })
 
 })

@@ -38,7 +38,7 @@ nav a:hover {
 
 .search-bar {
   display: none;
-  background-color: #3b455c;
+  background-color: #21d192;
   border-top: solid 5px white;
   color: white;
   width: 100%;
@@ -67,7 +67,7 @@ nav a:hover {
 
 .search-bar button {
   margin-right: 1.5em;
-  margin-bottom: .55em;
+  margin-bottom: .65em;
   height: 40px;
   outline: none;
 }
@@ -160,8 +160,7 @@ nav a:hover {
 
 #post-sneaker .post-item h3 {
   text-align: center;
-  background-color: #3b455c;
-  color: white;
+  background-color: #21d192;
   padding: 1.5em;
 }
 
@@ -169,4 +168,41 @@ nav a:hover {
   width: 100%;
   margin: 1em 0;
   padding: .8em;
+}
+
+.login-register-forms {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.login-register-forms .signup-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #21d192;
+  padding: 1em 2em;
+}
+
+.login-register-forms .signup-header i {
+  font-size: 150%;
+  margin-top: .3em;
+  cursor: pointer;
+}
+
+.login-register-forms .signup-header i:hover {
+  color: white;
+}
+
+.login-register-forms form {
+  width: 60%;
+  margin: .5em auto;
+}
+
+.login-register-forms form label {
+  margin-top: .5em;
+}
+
+.login-register-forms form button {
+  margin: 1em 0;
+  width: 100%;
 }
