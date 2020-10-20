@@ -39,13 +39,14 @@
                     <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">search</a>
 
                     <a href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">login</a>
-                    <a href="/user/register" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Register</a>
+                    <a href="/user/register" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">register</a>
                 </div>
 
             </div>
         </div>
     </nav>
 
+    <!-- Header -->
     <header>
         <div class="w3-container w3-display-right">
             <h2><b>stay fresh, buy sneakers</b></h3>
@@ -54,14 +55,52 @@
         </div>
     </header>
 
+    <!-- search bar -->
+    <div class="search-bar">
+      <div class="form-inputs">
+          <form action="/sneakers" method="get">
+              <div class="w3-container w3-cell">
+                  <label for="brand-search"></label>
+                  <input type="text" name="brand" placeholder="brand..">
+              </div>
+
+              <div class="w3-container w3-cell">
+                  <label for="min-price-search"></label>
+                  <input type="number" name="min_price" placeholder="min price...">
+
+              </div>
+
+              <div class="w3-container w3-cell">
+                  <label for="max-price-search"></label>
+                  <input type="number" name="max_price" placeholder="max price...">
+              </div>
+
+              <div class="w3-container w3-cell">
+                  <label for="size-search"></label>
+                  <input type="number" name="size" placeholder="size...">
+              </div>
+
+              <div class="w3-container w3-cell">
+                  <label for="size-city"></label>
+                  <input type="text" name="city" placeholder="city...">
+              </div>
+      </div>
+      <div class="w3-container w3-cell w3-display-right">
+          <button class="w3-button w3-white w3-large w3-border"><b>search</b></button>
+          <i id="hide-button" class="fas fa-times-circle"></i>
+      </div>
+      </form>
+  </div>
+
+
 <!-- Post sneaker form! -->
 <div id="post-sneaker">
   <div class="post-item">
     <h3><b>post sneakers</b></h3>
-  <form class="form-group mb-2" action="/login" method="POST">
-    <div>
-      <label for="title">owner id</label>
-      <input class="form-control" type="number" name="owner_id" placeholder="title...">
+      <form class="form-group mb-2" action="/login" method="POST">
+        <div>
+          <label for="title">owner id</label>
+            <input class="form-control" type="number" name="owner_id" placeholder="title...">
 
                 <label for="title">Title</label>
                 <input class="form-control" type="text" name="title" placeholder="title...">
@@ -78,20 +117,20 @@
                 <label for="model_year">Model year</label>
                 <input class="form-control" type="number" name="model_year" placeholder="year...">
 
-      <label for="thumbnail_photo_url">thumbnail_photo_url</label>
-      <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
+                <label for="thumbnail_photo_url">thumbnail_photo_url</label>
+                <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
 
-      <label for="main_photo_url">thumbnail_photo_url</label>
-      <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
+                <label for="main_photo_url">thumbnail_photo_url</label>
+                <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
 
-      <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
-      <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
+                <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
+                <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
 
-      <label for="main_photo_url">main photo</label>
-      <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
+                <label for="main_photo_url">main photo</label>
+                <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
 
-      <label for="date_posted">date posted MAKE TIMESTAMP</label>
-      <input class="form-control" type="date" name="date_posted">
+                <label for="date_posted">date posted MAKE TIMESTAMP</label>
+                <input class="form-control" type="date" name="date_posted">
 
                 <label for="country">country</label>
                 <input class="form-control" type="text" name="country" placeholder="country...">
@@ -109,42 +148,6 @@
   </form>
 </div>
 </div>
-    <!-- search bar -->
-    <div class="search-bar">
-        <div class="form-inputs">
-            <form action="/sneakers" method="get">
-                <div class="w3-container w3-cell">
-                    <label for="brand-search"></label>
-                    <input type="text" name="brand" placeholder="brand..">
-                </div>
-
-                <div class="w3-container w3-cell">
-                    <label for="min-price-search"></label>
-                    <input type="number" name="min_price" placeholder="min price...">
-
-                </div>
-
-                <div class="w3-container w3-cell">
-                    <label for="max-price-search"></label>
-                    <input type="number" name="max_price" placeholder="max price...">
-                </div>
-
-                <div class="w3-container w3-cell">
-                    <label for="size-search"></label>
-                    <input type="number" name="size" placeholder="size...">
-                </div>
-
-                <div class="w3-container w3-cell">
-                    <label for="size-city"></label>
-                    <input type="text" name="city" placeholder="city...">
-                </div>
-        </div>
-        <div class="w3-container w3-cell w3-display-right">
-            <button class="w3-button w3-white w3-large w3-border"><b>search</b></button>
-            <i id="hide-button" class="fas fa-times-circle"></i>
-        </div>
-        </form>
-    </div>
 
     <!-- !PAGE CONTENT! -->
     <main class="w3-main w3-content w3-padding">

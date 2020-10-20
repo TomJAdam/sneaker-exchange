@@ -24,20 +24,64 @@ module.exports = (dataHelpers) => {
       });
   });
 
+
+  // login
   router.get('/login', (req, res) => {
     res.render('login');
   });
 
+<<<<<<< HEAD
 
+=======
+  const login = (email, password) => {
+    return dataHelpers.getUserWithEmail(email)
+    .then(user => {
+      if (password === user.password) {
+        return user;
+      }
+      return null;
+    })
+  }
+
+  router.post('/login', (req, res) => {
+    const {email, password} = req.body;
+    login(email, password)
+      .then(user => {
+        if (!user) {
+          res.send({error: "error"});
+          return;
+        }
+        req.session.userId = user.id;
+        res.send({user: {name: user.name, email: user.email, phone: user.phone, id: user.id}})
+      })
+  })
+
+
+  // register
+>>>>>>> form-stylin
 
   router.get('/register', (req, res) => {
     res.render('register');
   });
 
+<<<<<<< HEAD
   router.get('/login/:id', (req, res) => {
     req.session.user_id = req.params.id;
     res.redirect('/');
     });
+=======
+  router.post('/register', (req, res) => {
+    dataHelpers.addUser(req.body)
+    .then((user) => {
+      if (!user) {
+        res.send({error: "error"});
+        return;
+      }
+      res.session.userId = user.id
+      res.send("successful user creation")
+    })
+  })
+>>>>>>> form-stylin
 
   // send back data to different listing pages
   router.get('/:page', (req, res) => {
