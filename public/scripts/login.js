@@ -44,12 +44,10 @@ $(() => {
     })
   })
 
-  //exit button
+  //exit button ! needs work !
   $(document).on("click", "#hide-button", () => {
-    if($("main").is(':empty')) {
-      $("main").toggle();
+      $("main").show();
       $(".login-register-forms").empty();
-    }
   })
 
 })

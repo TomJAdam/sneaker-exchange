@@ -50,9 +50,9 @@ $(() => {
     })
   })
 
-  //exit button
+  //exit button ! needs work !
   $(document).on("click", "#hide-button", () => {
-    $("main").toggle();
+    $("main").show();
     $(".login-register-forms").empty();
   })
 

@@ -67,7 +67,7 @@ nav a:hover {
 
 .search-bar button {
   margin-right: 1.5em;
-  margin-bottom: .55em;
+  margin-bottom: .65em;
   height: 40px;
   outline: none;
 }
@@ -161,7 +161,6 @@ nav a:hover {
 #post-sneaker .post-item h3 {
   text-align: center;
   background-color: #21d192;
-  color: white;
   padding: 1.5em;
 }
 
@@ -195,7 +194,7 @@ nav a:hover {
 }
 
 .login-register-forms form {
-  width: 90%;
+  width: 60%;
   margin: .5em auto;
 }
 
