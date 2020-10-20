@@ -38,7 +38,7 @@
         }
     }
     .main {
-        margin: 5em auto;
+        margin: 3em auto;
         width: 70%;
     }
     .foot {
@@ -49,7 +49,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 0;
-            padding-bottom: 1em;
+            padding-bottom: 2em;
             li {
                 text-align: left;
                 text-transform: uppercase;
@@ -58,16 +58,6 @@
                     margin: 0 1em;
                     color: #000;
                 }
-            }
-            &::after {
-                width: 60vw;
-                position: absolute;
-                bottom: -5%;
-                left: 50%;
-                transform: translateX(-50%);
-                content: '';
-                display: block;
-                border-bottom: 1px solid #504e4e24;
             }
         }
     }

@@ -29,6 +29,8 @@
 
     <script src="https://kit.fontawesome.com/85dbc41dda.js" crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     </style>
 </head>
 
@@ -41,14 +43,15 @@
                     <a href="#" id="logo" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-left w3-padding-16">Sneaker<b>Exchange</b></a>
                     <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">search</a>
 
-                    <a href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">login</a>
-                    <a href="/user/register" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Register</a>
+                    <a id="nav-login-button" href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">login</a>
+                    <a id="nav-register-button" href="/user/register" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">register</a>
                 </div>
 
             </div>
         </div>
     </nav>
 
+    <!-- Header -->
     <header>
         <div class="w3-container w3-display-right">
             <h2><b>stay fresh, buy sneakers</b></h3>
@@ -57,61 +60,6 @@
         </div>
     </header>
 
-    <!-- Post sneaker form! -->
-    <div id="post-sneaker">
-        <div class="post-item">
-            <h3><b>post sneakers</b></h3>
-            <form class="form-group mb-2" action="/login" method="POST">
-                <div>
-                    <label for="title">owner id</label>
-                    <input class="form-control" type="number" name="owner_id" placeholder="title...">
-
-                    <label for="title">Title</label>
-                    <input class="form-control" type="text" name="title" placeholder="title...">
-
-                    <label for="brand">Brand</label>
-                    <input class="form-control" type="text" name="brand" placeholder="brand...">
-
-                    <label for="brand">Price</label>
-                    <input class="form-control" type="number" name="price" placeholder="price...">
-
-                    <label for="size">Size</label>
-                    <input class="form-control" type="number" name="size" placeholder="size...">
-
-                    <label for="model_year">Model year</label>
-                    <input class="form-control" type="number" name="model_year" placeholder="year...">
-
-                    <label for="thumbnail_photo_url">thumbnail_photo_url</label>
-                    <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
-
-                    <label for="main_photo_url">thumbnail_photo_url</label>
-                    <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
-
-                    <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
-      <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
-
-      <label for="main_photo_url">main photo</label>
-      <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
-
-                    <label for="date_posted">date posted MAKE TIMESTAMP</label>
-                    <input class="form-control" type="date" name="date_posted">
-
-                    <label for="country">country</label>
-                    <input class="form-control" type="text" name="country" placeholder="country...">
-
-                    <label for="city">city</label>
-                    <input class="form-control" type="text" name="city" placeholder="city...">
-
-                    <label for="province">state/province</label>
-                    <input class="form-control" type="text" name="province" placeholder="state/province...">
-
-                    <button type="submit" class="btn btn-primary">Post</button>
-                </div>
-            </form>
-        </div>
-        </form>
-    </div>
-    </div>
     <!-- search bar -->
     <div class="search-bar">
         <div class="form-inputs">
@@ -149,6 +97,68 @@
         </form>
     </div>
 
+
+    <!-- Post sneaker form! -->
+    <div id="post-sneaker">
+        <div class="post-item">
+            <h3><b>post sneakers</b></h3>
+            <form class="form-group mb-2" action="/login" method="POST">
+                <div>
+                    <label for="title">owner id</label>
+                    <input class="form-control" type="number" name="owner_id" placeholder="title...">
+
+                    <label for="title">Title</label>
+                    <input class="form-control" type="text" name="title" placeholder="title...">
+
+                    <label for="brand">Brand</label>
+                    <input class="form-control" type="text" name="brand" placeholder="brand...">
+
+                    <label for="brand">Price</label>
+                    <input class="form-control" type="number" name="price" placeholder="price...">
+
+                    <label for="size">Size</label>
+                    <input class="form-control" type="number" name="size" placeholder="size...">
+
+                    <label for="model_year">Model year</label>
+                    <input class="form-control" type="number" name="model_year" placeholder="year...">
+
+                    <label for="thumbnail_photo_url">thumbnail_photo_url</label>
+                    <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
+
+                    <label for="main_photo_url">thumbnail_photo_url</label>
+                    <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
+
+                    <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
+                <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
+
+                <label for="main_photo_url">main photo</label>
+                <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
+
+                    <label for="date_posted">date posted MAKE TIMESTAMP</label>
+                    <input class="form-control" type="date" name="date_posted">
+
+                    <label for="country">country</label>
+                    <input class="form-control" type="text" name="country" placeholder="country...">
+
+                    <label for="city">city</label>
+                    <input class="form-control" type="text" name="city" placeholder="city...">
+
+                    <label for="province">state/province</label>
+                    <input class="form-control" type="text" name="province" placeholder="state/province...">
+
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
+        </form>
+    </div>
+    </form>
+    </div>
+    </div>
+
+    <!-- login /register forms append here -->
+    <div class="login-register-forms"></div>
+
     <!-- !PAGE CONTENT! -->
     <main class="w3-main w3-content w3-padding">
 
@@ -168,35 +178,146 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
-        <div class="w3-third">
-            <h3>FOOTER</h3>
-            <p>We can add anything here</p>
+    <footer class="page-footer font-small blue-grey lighten-5">
 
+        <div style="background-color: #21d192;">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic">
+                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
         </div>
 
-        <div class="w3-third">
-            <h3>Made BY: </h3>
-            <ul class="w3-ul w3-hoverable">
-                <li class="w3-padding-16">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
 
-                    <span class="w3-large">Tom</span><br>
+            <!-- Grid row -->
+            <div class="row mt-3 dark-grey-text">
 
-                </li>
-                <li class="w3-padding-16">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
 
-                    <span class="w3-large">Calvin</span><br>
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">SneakerExchange</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Made by students of Lighthouse Labs!</p>
 
-                </li>
-                <li class="w3-padding-16">
+                </div>
+                <!-- Grid column -->
 
-                    <span class="w3-large">Sher</span><br>
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                </li>
-            </ul>
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Products</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="dark-grey-text" href="#!">Adidas</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Nike</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Lacoste</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Others</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="dark-grey-text" href="#!">Your Account</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Sell Sneakers</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Rates</a>
+                    </p>
+                    <p>
+                        <a class="dark-grey-text" href="#!">Help</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i> Vancouver, BC</p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> admin@sneaker-exchange.com</p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> +1 (666) 766 - 7665 </p>
+                    <p>
+
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
         </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <!-- <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+    <a class="dark-grey-text" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div> -->
+        <!-- Copyright -->
 
     </footer>
+    <!-- Footer -->
 
     <!-- End page content -->
 
@@ -211,6 +332,8 @@
     <script src="./scripts/index.js"></script>
     <script src="./scripts/search.js"></script>
     <script src="./scripts/post_item.js"></script>
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
 </body>
 
 </html>

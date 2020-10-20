@@ -42,7 +42,7 @@
 }
 
 #sneakers-detail .main {
-  margin: 5em auto;
+  margin: 3em auto;
   width: 70%;
 }
 
@@ -56,7 +56,7 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 0;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 }
 
 #sneakers-detail .foot ul li {
@@ -68,15 +68,4 @@
 #sneakers-detail .foot ul li strong {
   margin: 0 1em;
   color: #000;
-}
-
-#sneakers-detail .foot ul::after {
-  width: 60vw;
-  position: absolute;
-  bottom: -5%;
-  left: 50%;
-  transform: translateX(-50%);
-  content: '';
-  display: block;
-  border-bottom: 1px solid #504e4e24;
 }
