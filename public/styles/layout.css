@@ -32,6 +32,10 @@ nav #logo {
   font-family: 'Krona One', sans-serif;
 }
 
+nav a:hover {
+  text-decoration: none;
+}
+
 .search-bar {
   background-color: #3b455c;
   border-top: solid 5px white;
@@ -134,9 +138,11 @@ nav #logo {
 #post-sneaker {
   display: flex;
   justify-content: center;
+  padding-bottom: 2em;
 }
 
 #post-sneaker .post-item {
+  border-bottom: 1px solid darkgray;
   width: 100%;
 }
 
