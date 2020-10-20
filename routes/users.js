@@ -55,9 +55,18 @@ module.exports = (dataHelpers) => {
         console.log('logged in!')
         req.session.userId = user.id;
         res.send({user: {name: user.name, email: user.email, phone: user.phone, id: user.id}})
+        // res.redirect('/')
       })
   })
 
+  router.get('/checkLogin', (req, res) => {
+   const userId = req.session.userId;
+    if(!userId) {
+       res.send({error: "error"});
+       return ;
+    }
+
+  })
 
   // register
 
