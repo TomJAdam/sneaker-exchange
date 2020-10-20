@@ -30,9 +30,6 @@ module.exports = (dataHelpers) => {
     res.render('login');
   });
 
-<<<<<<< HEAD
-
-=======
   const login = (email, password) => {
     return dataHelpers.getUserWithEmail(email)
     .then(user => {
@@ -58,18 +55,11 @@ module.exports = (dataHelpers) => {
 
 
   // register
->>>>>>> form-stylin
 
   router.get('/register', (req, res) => {
     res.render('register');
   });
 
-<<<<<<< HEAD
-  router.get('/login/:id', (req, res) => {
-    req.session.user_id = req.params.id;
-    res.redirect('/');
-    });
-=======
   router.post('/register', (req, res) => {
     dataHelpers.addUser(req.body)
     .then((user) => {
@@ -81,7 +71,6 @@ module.exports = (dataHelpers) => {
       res.send("successful user creation")
     })
   })
->>>>>>> form-stylin
 
   // send back data to different listing pages
   router.get('/:page', (req, res) => {
