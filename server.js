@@ -11,6 +11,12 @@ const app = express();
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
+app.use(cookieSession({
+  name: 'session',
+  keys: ['lknt42fnoh90hn2hf90w8fhofnwe0'],
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 app.set("view engine", "ejs");
 // PG database client / connection setup
@@ -73,25 +79,48 @@ function generateRandomString(bod) {
 //   //user makes a new userid and password
 //   let newEmail = req.body.email;
 //   let newPass = req.body.password;
-//   console.log("email: ", newEmail);
-//   console.log("password:",newPass)
 
 //   if (newEmail === "" && newPass === "") {
 
 //     res.sendStatus(404);
+//   } else if (getUserByEmail(users, newEmail)) {
+//     return res.status(400).send("User already exists");
+
 //   } else {
 
 //     const hashedPassword = bcrypt.hashSync(newPass, 10);
 //     const newID = generateRandomString();
-//     console.log("newID is", newID);
-//     users[]
-//     res.redirect("/")
+//     console.log(req.session);
+//     req.session.user_id = newID;
+//     console.log(req.session);
+//     users[newID] = {
+//       id: newID,
+//       email: newEmail,
+//       password: hashedPassword
+//     };
+
+//     res.redirect("/urls")
 //   }
 // });
 
+// const getUserByEmail = function (usersDB, email) {
+//   for (let user in usersDB) {
+
+//     if (usersDB[user]["email"] === email) {
+//       return usersDB[user];
+//     }
+
+//   }
+//   return null;
+// }
+
+// module.exports = getUserByEmail;
 
 app.post('/login', (req, res) => {
  const {email, password} = req.body;
+ const newID = generateRandomString();
+ req.session.userId = newID;
+ console.log("new session: ", req.session.userId);
  console.log("email: ", email);
  console.log("pass: ", password);
  res.redirect('/');
