@@ -64,7 +64,9 @@ module.exports = (dataHelpers) => {
        res.send({error: "error"});
        return ;
     }
-
+    console.log("userId is: ", userId);
+    res.send({ user: { name: userId.name, email: userId.email, phone: userId.phone, id: userId.id } })
+    console.log("user is: ", user);
   })
 
     // register
