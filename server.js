@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
 const app = express();
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
+const bcrypt = require('bcrypt');
 
 app.set("view engine", "ejs");
 // PG database client / connection setup
@@ -59,3 +61,39 @@ app.use('/user', userRoutes);
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`);
 });
+
+// const users = {};
+// function generateRandomString(bod) {
+//   //function to generate random numbers
+//   return Math.random().toString(20).substr(2, 6);
+// }
+
+// app.post("/register", (req, res) => {
+//   //user makes a new userid and password
+//   let newEmail = req.body.email;
+//   let newPass = req.body.password;
+//   console.log("email: ", newEmail);
+//   console.log("password:",newPass)
+
+//   if (newEmail === "" && newPass === "") {
+
+//     res.sendStatus(404);
+//   } else {
+
+//     const hashedPassword = bcrypt.hashSync(newPass, 10);
+//     const newID = generateRandomString();
+//     console.log("newID is", newID);
+//     users[]
+//     res.redirect("/")
+//   }
+// });
+
+
+app.post('/login', (req, res) => {
+ const {email, password} = req.body;
+ console.log("email: ", email);
+ console.log("pass: ", password);
+ res.redirect('/');
+
+});
+
