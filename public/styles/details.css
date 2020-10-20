@@ -1,0 +1,82 @@
+#sneakers-detail {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#sneakers-detail ul {
+  list-style: none;
+}
+
+#sneakers-detail ul li {
+  margin: 0.2em 0;
+  padding: 0 1em;
+}
+
+#sneakers-detail .head h1 {
+  font-size: 5em;
+  margin: 0.3em auto;
+  text-shadow: 4px 4px 6px #38373741;
+  text-transform: capitalize;
+}
+
+#sneakers-detail .head ul {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em auto;
+  text-transform: capitalize;
+}
+
+#sneakers-detail .head ul li {
+  position: relative;
+}
+
+#sneakers-detail .head ul li:nth-child(-n + 2)::after {
+  position: absolute;
+  right: 0;
+  content: '|';
+  font-size: 1.2em;
+  color: rgba(26, 24, 24, 0.308);
+}
+
+#sneakers-detail .main {
+  margin: 5em auto;
+  width: 70%;
+}
+
+#sneakers-detail .foot {
+  position: relative;
+  height: 7em;
+}
+
+#sneakers-detail .foot ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  padding-bottom: 1em;
+}
+
+#sneakers-detail .foot ul li {
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.555);
+}
+
+#sneakers-detail .foot ul li strong {
+  margin: 0 1em;
+  color: #000;
+}
+
+#sneakers-detail .foot ul::after {
+  width: 60vw;
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  display: block;
+  border-bottom: 1px solid #504e4e24;
+}

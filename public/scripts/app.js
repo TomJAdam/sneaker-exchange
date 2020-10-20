@@ -33,11 +33,22 @@ $(() => {
             });
     };
 
+    const getDetails = (id) => {
+        $.get({
+                url: `api/sneakers/${id}`
+            })
+            .then(res => {
+                $('#list-grid').empty();
+                $('#page-anchor').empty();
+                sneakersDetails(res[0]);
+            });
+    };
 
 
     window.queries = {
         listSneakers,
-        sortSneakers
+        sortSneakers,
+        getDetails
     };
 
 

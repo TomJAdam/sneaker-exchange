@@ -1,0 +1,74 @@
+#sneakers-detail {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    ul {
+        list-style: none;
+        li {
+            margin: 0.2em 0;
+            padding: 0 1em;
+        }
+    }
+    .head {
+        h1 {
+            font-size: 5em;
+            margin: 0.3em auto;
+            text-shadow: 4px 4px 6px #38373741;
+            text-transform: capitalize;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            margin: 0.5em auto;
+            text-transform: capitalize;
+            li {
+                position: relative;
+                &:nth-child(-n + 2) {
+                    &::after {
+                        position: absolute;
+                        right: 0;
+                        content: '|';
+                        font-size: 1.2em;
+                        color: rgba(26, 24, 24, 0.308);
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        margin: 5em auto;
+        width: 70%;
+    }
+    .foot {
+        position: relative;
+        height: 7em;
+        ul {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0;
+            padding-bottom: 1em;
+            li {
+                text-align: left;
+                text-transform: uppercase;
+                color: rgba(17, 17, 17, 0.555);
+                strong {
+                    margin: 0 1em;
+                    color: #000;
+                }
+            }
+            &::after {
+                width: 60vw;
+                position: absolute;
+                bottom: -5%;
+                left: 50%;
+                transform: translateX(-50%);
+                content: '';
+                display: block;
+                border-bottom: 1px solid #504e4e24;
+            }
+        }
+    }
+}

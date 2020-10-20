@@ -45,13 +45,26 @@ module.exports = (dataHelpers) => {
 
     //post to sneaker database
     router.post('/new', (req, res) => {
-      dataHelpers.addSneaker(req.body)
-    .then((newSneaker) => {
-      console.log('success!', newSneaker)
-    })
-    .catch(err => {
-      console.log('err:', err)
-    })
+        dataHelpers.addSneaker(req.body)
+            .then((newSneaker) => {
+                console.log('success!', newSneaker);
+            })
+            .catch(err => {
+                console.log('err:', err);
+            });
+    });
+
+    //access to specific sneakers by id
+    router.get('/:id', (req, res) => {
+        dataHelpers.sneakersListings(true, req.params)
+            .then(data => {
+                res.send(data);
+            })
+            .catch(err => {
+                res
+                    .status(500)
+                    .json({ error: err.message });
+            });
     });
 
 

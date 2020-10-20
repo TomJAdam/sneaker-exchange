@@ -4,6 +4,7 @@ $(() => {
     window.appendSneakers = data => {
         const $listGrid = $('#list-grid');
         const {
+            id,
             thumbnail_photo_url,
             title,
             price
@@ -22,6 +23,10 @@ $(() => {
       </div>
   </div>
 `);
+        $sneaker.on('click', e => {
+            e.preventDefault();
+            queries.getDetails(id);
+        });
         $listGrid.append($sneaker);
     };
 
