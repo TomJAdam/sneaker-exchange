@@ -58,6 +58,14 @@ module.exports = (dataHelpers) => {
             })
     })
 
+  router.get('/checkLogin', (req, res) => {
+   const userId = req.session.userId;
+    if(!userId) {
+       res.send({error: "error"});
+       return ;
+    }
+
+  })
 
     // register
 
