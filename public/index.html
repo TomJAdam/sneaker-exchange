@@ -53,11 +53,14 @@
         </div>
     </header>
 
-    <!-- Post sneaker form! -->
-    <div class="post-item">
-        <h3>post sneakers</h3>
-        <form class="form-group mb-2" action="/login" method="POST">
-            <div>
+<!-- Post sneaker form! -->
+<div id="post-sneaker">
+  <div class="post-item">
+    <h3><b>post sneakers</b></h3>
+  <form class="form-group mb-2" action="/login" method="POST">
+    <div>
+      <label for="title">owner id</label>
+      <input class="form-control" type="number" name="owner_id" placeholder="title...">
 
                 <label for="title">Title</label>
                 <input class="form-control" type="text" name="title" placeholder="title...">
@@ -74,11 +77,20 @@
                 <label for="model_year">Model year</label>
                 <input class="form-control" type="number" name="model_year" placeholder="year...">
 
-                <label for="exampleFormControlFile1">thumbnail photo</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <label for="thumbnail_photo_url">thumbnail_photo_url</label>
+      <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
 
-                <label for="exampleFormControlFile1">main photo</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <label for="main_photo_url">thumbnail_photo_url</label>
+      <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
+
+      <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
+      <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
+
+      <label for="main_photo_url">main photo</label>
+      <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
+
+      <label for="date_posted">date posted MAKE TIMESTAMP</label>
+      <input class="form-control" type="date" name="date_posted">
 
                 <label for="country">country</label>
                 <input class="form-control" type="text" name="country" placeholder="country...">
@@ -93,7 +105,9 @@
             </div>
         </form>
     </div>
-
+  </form>
+</div>
+</div>
     <!-- search bar -->
     <div class="search-bar">
         <div class="form-inputs">
@@ -138,8 +152,6 @@
         <div class="main-grid" id="list-grid">
             <!-- request contents from database  -->
         </div>
-
-
 
         <!-- Pagination -->
         <div class="w3-center w3-padding-32" id='pagination'>
@@ -193,6 +205,7 @@
     <script src="./scripts/app.js"></script>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/search.js"></script>
+    <script src="./scripts/post_item.js"></script>
 </body>
 
 </html>

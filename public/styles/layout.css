@@ -99,13 +99,9 @@ nav #logo {
 
 .main-grid .w3-quarter {
   width: 90%;
-  height: 90%;
+  margin: 1em 0;
   border: 1px solid lightgray;
   background-color: #eeeded;
-}
-
-.main-grid .w3-quarter img {
-  max-height: 60%;
 }
 
 .main-grid .w3-quarter:hover {
@@ -135,13 +131,34 @@ nav #logo {
   color: #e33333;
 }
 
-.post-item {
-  display: none;
-  width: 90%;
-  margin: 1em;
+#post-sneaker {
+  display: flex;
+  justify-content: center;
 }
 
-.post-item input,
-.post-item label {
-  margin: .25em;
+#post-sneaker .post-item {
+  width: 100%;
+}
+
+#post-sneaker .post-item form {
+  margin: 0 auto;
+  width: 60%;
+}
+
+#post-sneaker .post-item input,
+#post-sneaker .post-item label {
+  margin: .25em 0;
+}
+
+#post-sneaker .post-item h3 {
+  text-align: center;
+  background-color: #3b455c;
+  color: white;
+  padding: 1.5em;
+}
+
+#post-sneaker .post-item button {
+  width: 100%;
+  margin: 1em 0;
+  padding: .8em;
 }

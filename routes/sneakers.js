@@ -42,6 +42,27 @@ module.exports = (dataHelpers) => {
                     .json({ error: err.message });
             });
     });
+<<<<<<< HEAD
+=======
+    })
+
+    //post to sneaker database
+    router.post('/new', (req, res) => {
+      dataHelpers.addSneaker(req.body)
+    .then((newSneaker) => {
+      console.log('success!', newSneaker)
+    })
+    .catch(err => {
+      console.log('err:', err)
+    })
+    })
+
+
+
+    //   res.render("login.html");
+
+    // });
+>>>>>>> new-stuff
 
     return router;
 };
