@@ -44,7 +44,7 @@ module.exports = (dataHelpers) => {
     });
 
     //post to sneaker database
-    router.post('/new', (req, res) => {
+  router.post('/new', (req, res) => {
       dataHelpers.addSneaker(req.body)
     .then((newSneaker) => {
       console.log('success!', newSneaker)
@@ -52,7 +52,7 @@ module.exports = (dataHelpers) => {
     .catch(err => {
       console.log('err:', err)
     })
-    });
+  });
 
 
 
