@@ -17,6 +17,7 @@ $(() => {
         </div>
       </form>
     `)
+
     if($(".login-register-forms").is(':empty')) {
       $(".login-register-forms").append($loginForm);
     } else {
