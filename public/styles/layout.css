@@ -37,6 +37,7 @@ nav a:hover {
 }
 
 .search-bar {
+  display: none;
   background-color: #3b455c;
   border-top: solid 5px white;
   color: white;
@@ -142,6 +143,7 @@ nav a:hover {
 }
 
 #post-sneaker .post-item {
+  display: none;
   border-bottom: 1px solid darkgray;
   width: 100%;
 }
