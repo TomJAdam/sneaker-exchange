@@ -9,7 +9,6 @@ module.exports = (dataHelpers) => {
     // send back data to different listing pages
     router.get('/', (req, res) => {
         const dataset = {};
-        console.log(req.query);
         dataHelpers.sneakersListings(null, req.query)
             .then(data => {
                 dataset.count = data[0].count;

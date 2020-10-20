@@ -1,6 +1,6 @@
 $(() => {
 
-    const listSneakers = (limit, currentPage = 1, filters) => {
+    const listSneakers = function(limit, currentPage = 1, filters) {
         $.get({
                 url: `api/sneakers?${filters ? filters + '&' : ''}&page=${currentPage}`,
             })

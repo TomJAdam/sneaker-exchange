@@ -10,6 +10,8 @@ $(() => {
                 } else {
                     content = currentPage < lastPage ? content = currentPage + 1 : lastPage;
                 }
+            } else {
+                anchorPage.data('index', content);
             }
             const href = `api/sneakers?${filters ? filters + '&' : ''}page=${content}`;
             anchorPage.attr(`href`, href);
@@ -27,6 +29,11 @@ $(() => {
         const pageArr = paginator(currentPage, lastPage);
         pageArr.forEach(pageIndex => {
             insertPageLink(pageIndex, currentPage, lastPage, filters);
+        });
+        $('#page-anchor a').each(function(i) {
+            if ($(this).data('index') === currentPage) {
+                $(this).addClass('current-page');
+            }
         });
     };
 

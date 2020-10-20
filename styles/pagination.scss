@@ -1,12 +1,28 @@
 #pagination {
-    .w3-bar {
+    #page-anchor {
+        & a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none !important;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.329);
+            }
+        }
         .ellipsis {
             &:hover {
                 color: none !important;
                 background-color: #fff !important;
+                box-shadow: none;
             }
             color: #000 !important;
             cursor: default;
+        }
+        .current-page {
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
         }
     }
 }
