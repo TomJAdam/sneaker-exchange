@@ -138,8 +138,13 @@ nav a:hover {
 
 #post-sneaker {
   display: flex;
-  justify-content: center;
   padding-bottom: 2em;
+}
+
+#post-sneaker .post-sneaker-header {
+  display: flex;
+  width: 100%;
+  background-color: #21d192;
 }
 
 #post-sneaker .post-item {
@@ -159,8 +164,6 @@ nav a:hover {
 }
 
 #post-sneaker .post-item h3 {
-  text-align: center;
-  background-color: #21d192;
   padding: 1.5em;
 }
 

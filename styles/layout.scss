@@ -135,9 +135,14 @@ nav {
 // post sneakers form
 #post-sneaker {
   display: flex;
-  justify-content: center;
   padding-bottom: 2em;
 
+  .post-sneaker-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #21d192;
+  }
   .post-item{
     display: none;
     border-bottom: 1px solid darkgray;
@@ -151,8 +156,6 @@ nav {
       margin: .25em 0;
     }
     h3 {
-      text-align: center;
-      background-color: #21d192;
       padding: 1.5em;
     }
     button {

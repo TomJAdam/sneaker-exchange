@@ -102,7 +102,10 @@
 <!-- Post sneaker form! -->
 <div id="post-sneaker">
   <div class="post-item">
-    <h3><b>post sneakers</b></h3>
+    <div class="post-sneaker-header">
+      <h3><b>post sneakers</b></h3>
+      <i id="hide-button" class="fas fa-times-circle"></i>
+    </div>
       <form class="form-group mb-2" action="/login" method="POST">
         <div>
           <label for="title">owner id</label>
@@ -128,12 +131,6 @@
 
                 <label for="main_photo_url">thumbnail_photo_url</label>
                 <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
-
-                <!-- <label for="thumbnail_photo_url">thumbnail photo</label>
-                <input type="file" class="form-control-file" name="thumbnail_photo_url" id="exampleFormControlFile1">
-
-                <label for="main_photo_url">main photo</label>
-                <input type="file" class="form-control-file" name="main_photo_url" id="exampleFormControlFile1"> -->
 
                     <label for="date_posted">date posted MAKE TIMESTAMP</label>
                     <input class="form-control" type="date" name="date_posted">

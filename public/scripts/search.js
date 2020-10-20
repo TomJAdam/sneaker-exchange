@@ -2,11 +2,11 @@
 
 $(() => {
 
-    $("#search").click(function() {
+    $(document).on("click", "#search", function() {
         $(".search-bar").slideDown('fast');
     });
 
-    $("#search").click(function() {
+    $(document).on("click", "#search", function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("header").offset().top
         }, 500);

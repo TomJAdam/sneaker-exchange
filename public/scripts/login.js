@@ -5,7 +5,7 @@ $(() => {
 
   $("#nav-login-button").click(function(e) {
     e.preventDefault();
-   console.log("nav");
+    console.log("nav");
     $("main").toggle();
 
     const $loginForm = $(`
@@ -43,13 +43,14 @@ $(() => {
 
                 <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">search</a>
 
-                <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">favorites</a>
+                <a id="favourites" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">favorites</a>
 
-                <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Sell</a>
+                <a id="sell-item" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">sell</a>
+                <a id="my-listings" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">my listings</a>
 
                 <a id="nav-login-button" href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
 
-                <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a>
+                <!-- <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a> -->
             </div>
 
         </div>
@@ -92,10 +93,12 @@ $(() => {
   })
 
 
-  //exit button ! needs work !
+  //exit button
   $(document).on("click", "#hide-button", () => {
     $("main").show();
     $(".login-register-forms").empty();
-})
+  })
+
+
 })
 
