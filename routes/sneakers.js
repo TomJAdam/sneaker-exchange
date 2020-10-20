@@ -25,10 +25,6 @@ module.exports = (dataHelpers) => {
             });
     });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 57b078a0298c2a7076c097fd450e7b4040327f6e
     router.post('/', (req, res) => {
         const dataset = {};
         dataHelpers.sneakersListings(null, req.body)
