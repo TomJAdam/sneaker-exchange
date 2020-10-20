@@ -63,7 +63,7 @@ nav {
   }
   button {
     margin-right: 1.5em;
-    margin-bottom: .85em;
+    margin-bottom: .55em;
     height: 40px;
     outline: none;
   }
@@ -101,12 +101,9 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   .w3-quarter {
     width: 90%;
-    height: 90%;
+    margin: 1em 0;
     border: 1px solid lightgray;
     background-color: rgb(238, 237, 237);
-    img {
-      max-height: 60%;
-    }
     &:hover {
       transform: scale(1.05);
       border: 1px solid darkgray;
@@ -128,6 +125,35 @@ nav {
           color: rgb(227, 51, 51);
         }
       }
+    }
+  }
+}
+
+// post sneakers form
+#post-sneaker {
+  display: flex;
+  justify-content: center;
+  .post-item{
+    // display: none;
+    width: 100%;
+    form {
+      margin: 0 auto;
+      width: 60%;
+    }
+    input,
+    label {
+      margin: .25em 0;
+    }
+    h3 {
+      text-align: center;
+      background-color: #3b455c;
+      color: white;
+      padding: 1.5em;
+    }
+    button {
+      width: 100%;
+      margin: 1em 0;
+      padding: .8em;
     }
   }
 }
