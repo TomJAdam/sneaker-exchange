@@ -46,6 +46,7 @@ app.use('/api/sneakers', sneakersRoutes);
 // app.use("/api/widgets", widgetsRoutes(db));
 
 
+
 // Note: mount other resources here, using the same pattern above
 const userRoutes = require('./routes/users')(dataHelpers);
 app.use('/user', userRoutes);

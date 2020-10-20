@@ -56,6 +56,18 @@ module.exports = (dataHelpers) => {
     });
     })
 
+    //post to sneaker database
+    router.post('/new', (req, res) => {
+    console.log('res :', req.body)
+      dataHelpers.addSneaker(req.body)
+    .then((newSneaker) => {
+      console.log('success!', newSneaker)
+    })
+    .catch(err => {
+      console.log('err:', err)
+    })
+    })
+
 
 
     //   res.render("login.html");
