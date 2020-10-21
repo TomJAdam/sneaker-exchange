@@ -85,18 +85,42 @@ module.exports = (dataHelpers) => {
         const id_set = { sneaker_id, user_id };
         dataHelpers.getFavouritesForUser(user_id, null, req.body)
             .then(data => {
-                if (data[0].count) {
+                if (Number(data[0].count)) {
                     res.send('Adding failed ... Sneakers existing in your favorites!!!');
+                } else {
+                    dataHelpers.addFavouritesForUser(id_set)
+                        .then(row => {
+                            res.send('Success! Sneakers added in your favorites');
+                        })
+                        .catch(err => {
+                            console.log(`failed to post into database`);
+                        });
                 }
-                return dataHelpers.addFavouritesForUser(id_set);
+
+            });
+
+
+    });
+
+    router.get('/mylistings', (req, res) => {
+        const userId = req.session.userId;
+        if (!userId) {
+            res.send('please log in first');
+        }
+        let dataset = {};
+        dataHelpers.getMyListings(userId)
+            .then(data => {
+                dataset.count = data[0].count;
+                return dataHelpers.getMyListings(userId);
             })
             .then(data => {
-                res.send('Success! Sneakers added in your favorites');
+                dataset.data = data;
+                res.send(dataset);
             })
             .catch(err => {
-                console.log(`failed to post into database`);
+                console.log('err:', err);
             });
-    });
+    })
 
     //access to specific sneakers by id
     router.get('/:id', (req, res) => {
@@ -110,7 +134,6 @@ module.exports = (dataHelpers) => {
                     .json({ error: err.message });
             });
     });
-
 
 
 

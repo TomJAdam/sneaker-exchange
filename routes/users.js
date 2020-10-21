@@ -86,6 +86,9 @@ module.exports = (dataHelpers) => {
     // register
 
     router.post('/register', (req, res) => {
+
+
+
         dataHelpers.addUser(req.body)
             .then((user) => {
                 console.log('user :', user);
@@ -95,7 +98,7 @@ module.exports = (dataHelpers) => {
                     return;
                 }
                 req.session.userId = user.id
-                res.send(200);
+                res.send({ user: { name: user.name, email: user.email, phone: user.phone, id: user.id } })
                 console.log("successful user creation")
             })
     })
