@@ -2,12 +2,7 @@
 
 $(() => {
 
-<<<<<<< HEAD
     $(document).on("click", "#search", function() {
-=======
-    $("body").on("click","#search", function() {
-      console.log("this is search bar");
->>>>>>> header
         $(".search-bar").slideDown('fast');
     });
 
