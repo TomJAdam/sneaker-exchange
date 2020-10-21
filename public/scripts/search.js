@@ -2,7 +2,8 @@
 
 $(() => {
 
-    $("#search").click(function() {
+    $("body").on("click","#search", function() {
+      console.log("this is search bar");
         $(".search-bar").slideDown('fast');
     });
 
