@@ -79,7 +79,6 @@ $(() => {
             })
 
     })
-<<<<<<< HEAD
     .then((response) => {
       console.log("resposense.data",response);
       $("main").toggle();
@@ -114,24 +113,3 @@ $(() => {
 
 })
 
-=======
-    $.get({
-            url: "/user/checkLogin",
-        })
-        .then((response) => {
-            console.log("resposense.data", response);
-            $("main").toggle();
-            $(".login-register-forms").empty();
-            $("#nav-login-button").hide();
-            $("#nav-register-button").hide();
-            $(".w3-top").append($loginAfter(response));
-        });
-
-
-    // exit button!needs work!
-    $(document).on("click", "#hide-button", () => {
-        $("main").show();
-        $(".login-register-forms").empty();
-    });
-});
->>>>>>> a9b5aa3c3082ede396bcc005e38fd5f19fb7a122
