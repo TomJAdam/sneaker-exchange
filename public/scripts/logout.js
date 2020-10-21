@@ -1,3 +1,10 @@
+function logOut() {
+  return $.ajax({
+    method: "POST",
+    url: "/user/logout",
+  })
+}
+
 $(() => {
 
 
