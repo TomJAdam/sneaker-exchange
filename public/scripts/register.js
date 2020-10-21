@@ -92,7 +92,7 @@ $(() => {
     $(".login-register-forms").empty();
     $("#nav-login-button").hide();
     $("#nav-register-button").hide();
-    $(".w3-top").html($loginAfter(response));
+    $(".w3-top").html($registerAfter(response));
   }, () => {
     // in case of error do javascript here, there is no session.
     // return res.status(401).send("No session key!");
