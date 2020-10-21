@@ -19,4 +19,8 @@ $(() => {
     $(".post-item").show('fast');
   })
 
+  $(document).on("click", "#hide-button", () => {
+    $(".post-item").hide();
+  })
+
 });
