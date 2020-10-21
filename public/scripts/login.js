@@ -77,7 +77,6 @@ $(() => {
 
 
             })
-
     })
     .then((response) => {
       console.log("resposense.data",response);
@@ -86,11 +85,8 @@ $(() => {
       $("#nav-login-button").hide();
       $("#nav-register-button").hide();
       $(".w3-top").append($loginAfter(response));
-
-
     })
 
-  })
   $.get({
     url: "/user/checkLogin",
       })
@@ -111,5 +107,5 @@ $(() => {
   })
 
 
-})
+});
 
