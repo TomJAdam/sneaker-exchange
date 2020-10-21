@@ -2,7 +2,7 @@
 
 $(() => {
 
-  $("#nav-register-button").click(function(e) {
+  $(document).on("click", "#nav-register-button", function(e) {
     e.preventDefault();
     $("main").toggle();
 
@@ -35,10 +35,11 @@ $(() => {
 
   })
 
+
   $(document).on("submit", "#register-form", function(e) {
     e.preventDefault();
     const data = $(this).serialize();
-    console.log('data :', data);
+    // console.log('data :', data);
     $('.post-item form').trigger("reset");
     $.post({
       url: "/user/register",
