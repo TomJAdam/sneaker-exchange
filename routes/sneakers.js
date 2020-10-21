@@ -62,10 +62,10 @@ module.exports = (dataHelpers) => {
             res.send('please log in first');
         }
         let dataset = {};
-        dataHelpers.getFavouritesForUser(userId)
+        dataHelpers.getFavouritesForUser(userId, null)
             .then(data => {
                 dataset.count = data[0].count;
-                return dataHelpers.getFavouritesForUser(userId, 20);
+                return dataHelpers.getFavouritesForUser(userId, 20, req.query);
             })
             .then(data => {
                 dataset.data = data;
@@ -73,6 +73,28 @@ module.exports = (dataHelpers) => {
             })
             .catch(err => {
                 console.log('err:', err);
+            });
+    });
+    //post to favorites database
+    router.post('/favorites', (req, res) => {
+        const sneaker_id = req.body.sneaker_id;
+        const user_id = req.session.userId;
+        if (!user_id) {
+            res.send('please login first');
+        }
+        const id_set = { sneaker_id, user_id };
+        dataHelpers.getFavouritesForUser(user_id, null, req.body)
+            .then(data => {
+                if (data[0].count) {
+                    res.send('Adding failed ... Sneakers existing in your favorites!!!');
+                }
+                return dataHelpers.addFavouritesForUser(id_set);
+            })
+            .then(data => {
+                res.send('Success! Sneakers added in your favorites');
+            })
+            .catch(err => {
+                console.log(`failed to post into database`);
             });
     });
 

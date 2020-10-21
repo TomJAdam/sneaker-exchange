@@ -23,9 +23,15 @@ $(() => {
       </div>
   </div>
 `);
-        $sneaker.on('click', e => {
+        $sneaker.on('click', function(e) {
             e.preventDefault();
             queries.getDetails(id);
+        });
+
+        $sneaker.find('.fa-gratipay').on('click', function(e) {
+            e.stopPropagation();
+            //ajax
+            queries.addToMyFavorites(id);
         });
         $listGrid.append($sneaker);
     };

@@ -21,11 +21,11 @@ $(() => {
                     queries.listSneakers(20, content, filters);
                 });
             } else {
-                const href = `api/sneakers/${endpoint}page=${content}`;
+                const href = `api/sneakers/${endpoint}?page=${content}`;
                 anchorPage.attr(`href`, href);
                 anchorPage.click(function(e) {
                     e.preventDefault();
-                    queries.getFavourites(20, content, endpoint);
+                    queries.getAPIListings(20, content, endpoint);
                 });
             }
         } else {
@@ -35,6 +35,7 @@ $(() => {
     };
 
     window.pagination = (currentPage, lastPage, filters, endpoint) => {
+        lastPage = lastPage ? lastPage : 1;
         const pageArr = paginator(currentPage, lastPage);
         pageArr.forEach(pageIndex => {
             insertPageLink(pageIndex, currentPage, lastPage, filters, endpoint);
