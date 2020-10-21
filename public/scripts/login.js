@@ -1,7 +1,7 @@
 $(() => {
 
 
-    $("#nav-login-button").click(function(e) {
+    $(document).on("click", "#nav-login-button", function(e) {
         e.preventDefault();
         console.log("nav");
         $("main").toggle();
