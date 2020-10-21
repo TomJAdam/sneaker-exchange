@@ -139,6 +139,7 @@ nav a:hover {
 #post-sneaker {
   display: flex;
   padding-bottom: 2em;
+  border-top: 5px solid white;
 }
 
 #post-sneaker .post-sneaker-header {
@@ -151,6 +152,11 @@ nav a:hover {
 #post-sneaker .post-sneaker-header i {
   margin: 2.2em;
   font-size: 150%;
+}
+
+#post-sneaker .post-sneaker-header i:hover {
+  color: white;
+  cursor: pointer;
 }
 
 #post-sneaker .post-item {

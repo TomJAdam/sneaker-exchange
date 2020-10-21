@@ -45,7 +45,7 @@ module.exports = (dataHelpers) => {
     router.post('/login', (req, res) => {
         const email = req.body.email;
         const password = req.body.password;
-        console.log('req.body :', req.body);
+        // console.log('req.body :', req.body);
         login(email, password)
             .then(user => {
                 if (!user) {
@@ -59,10 +59,10 @@ module.exports = (dataHelpers) => {
     })
 
   router.get('/checkLogin', (req, res) => {
-   const userId = req.session.userId;
+    const userId = req.session.userId;
     if(!userId) {
-       res.send({error: "error"});
-       return ;
+        res.send({error: "error"});
+        return ;
     }
 
   })
