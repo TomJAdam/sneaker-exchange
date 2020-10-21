@@ -21,7 +21,7 @@ $(() => {
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
       </form>
-    `)
+    `);
 
 
         if ($(".login-register-forms").is(':empty')) {
@@ -30,7 +30,7 @@ $(() => {
             $(".login-register-forms").empty();
         }
 
-    })
+    });
     const $loginAfter = (user) => {
         return $(`
     <nav>
@@ -46,7 +46,7 @@ $(() => {
                 <a id="sell-item" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">sell</a>
                 <a id="my-listings" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">my listings</a>
 
-                <a id="nav-login-button" href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
+                <a id="nav-logout-button" href="/" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
 
                 <!-- <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a> -->
             </div>
@@ -54,7 +54,7 @@ $(() => {
         </div>
     </div>
   </nav>
-  `)
+  `);
     };
 
 
@@ -80,19 +80,23 @@ $(() => {
     });
 
     $.get({
-            url: "/user/checkLogin",
+            url: "/user/checkLogin"
         })
         .then((response) => {
             console.log("resposense.data", response);
-            $("main").toggle();
+            // $("main").toggle();
             $(".login-register-forms").empty();
             $("#nav-login-button").hide();
             $("#nav-register-button").hide();
-            $(".w3-top").append($loginAfter(response));
+            $(".w3-top").html($loginAfter(response));
+        }, () => {
+            // in case of error do javascript here, there is no session.
+            // return res.status(401).send("No session key!");
         });
 
 
-    //exit button
+
+    //exit button ! needs work !
     $(document).on("click", "#hide-button", () => {
         $("main").show();
         $(".login-register-forms").empty();

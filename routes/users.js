@@ -61,12 +61,31 @@ module.exports = (dataHelpers) => {
     router.get('/checkLogin', (req, res) => {
         const userId = req.session.userId;
         if (!userId) {
-            res.send({ error: "error" });
+            //  res.send({error: "error"});
+            res.status(401).send("Not logged in!");
             return;
         }
+        //userId from session is only an integer, take integer and look for user in database using that id.
 
+        dataHelpers.getUserWithID(userId)
+            .then(user => {
+
+                res.send({
+                    user: { name: user.name, email: user.email, phone: user.phone, id: user.id }
+                })
+
+            })
+            .catch(console.log);
+        // console.log("user is: ", user);
     })
 
+    router.post('/logout', (req, res) => {
+        console.log("logout test");
+
+        req.session.userId = null;
+        res.send({});
+
+    });
     // register
 
     router.get('/register', (req, res) => {
