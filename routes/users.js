@@ -26,9 +26,6 @@ module.exports = (dataHelpers) => {
 
 
     // login
-    router.get('/login', (req, res) => {
-        res.render('login');
-    });
 
     const login = (email, password) => {
         return dataHelpers.getUserWithEmail(email)
@@ -87,9 +84,6 @@ module.exports = (dataHelpers) => {
     });
 
     // register
-    router.get('/register', (req, res) => {
-        res.render('register');
-    });
 
     router.post('/register', (req, res) => {
         dataHelpers.addUser(req.body)
