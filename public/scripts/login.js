@@ -46,7 +46,7 @@ $(() => {
                 <a id="sell-item" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">sell</a>
                 <a id="my-listings" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">my listings</a>
 
-                <a id="nav-logout-button" href="/" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
+                <a id="nav-logout-button" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
 
                 <!-- <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a> -->
             </div>
@@ -56,7 +56,7 @@ $(() => {
   </nav>
   `)
     };
-
+    $("#nav-logout-button").click(e => console.log("HEY"));
 
     $(document).on("submit", "#login-form", function(e) {
         e.preventDefault();
@@ -68,7 +68,7 @@ $(() => {
                 data: data
             })
             .then((response) => {
-                console.log("resposense.data", response);
+                // console.log("resposense.data", response);
                 $("main").toggle();
                 $(".login-register-forms").empty();
                 $("#nav-login-button").hide();
@@ -78,18 +78,18 @@ $(() => {
 
             })
     })
-    .then((response) => {
-      console.log("resposense.data",response);
-      $("main").toggle();
-      $(".login-register-forms").empty();
-      $("#nav-login-button").hide();
-      $("#nav-register-button").hide();
-      $(".w3-top").append($loginAfter(response));
-    })
+    // .then((response) => {
+    //   console.log("resposense.data",response);
+    //   $("main").toggle();
+    //   $(".login-register-forms").empty();
+    //   $("#nav-login-button").hide();
+    //   $("#nav-register-button").hide();
+    //   $(".w3-top").append($loginAfter(response));
+    // })
 
   $.get({
     url: "/user/checkLogin",
-    data: data
+
       })
   .then((response) => {
     console.log("resposense.data",response);

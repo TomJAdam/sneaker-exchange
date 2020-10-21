@@ -79,10 +79,12 @@ module.exports = (dataHelpers) => {
   })
 
   router.post('/logout', (req, res) => {
-    console.log("logout test");
+
 
     req.session.userId = null;
-    res.send({});
+    console.log("cookie in logout", req.session.userId );
+    // req.session = null;
+    res.redirect('/login');
 
   });
     // register
