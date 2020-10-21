@@ -7,6 +7,7 @@ $(() => {
             .then(res => {
                 const { count, data } = res;
                 const lastPage = Math.ceil(count / limit);
+                $('#sneakers-detail').remove();
                 $('#list-grid').empty();
                 data.forEach(row => {
                     appendSneakers(row);
@@ -24,6 +25,7 @@ $(() => {
             .then(res => {
                 const { count, data } = res;
                 const lastPage = Math.ceil(count / limit);
+                $('#sneakers-detail').remove();
                 $('#list-grid').empty();
                 data.forEach(row => {
                     appendSneakers(row);
