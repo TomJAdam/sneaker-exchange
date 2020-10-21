@@ -89,6 +89,8 @@ module.exports = (dataHelpers) => {
         })
         .then(data => {
           dataset.data = data;
+          dataset.data.forEach((item) => item.userId = userId);
+          // console.log('dataset :', dataset.data);
           res.send(dataset);
         })
         .catch(err => {
