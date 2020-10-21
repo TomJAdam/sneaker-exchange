@@ -62,10 +62,10 @@ module.exports = (dataHelpers) => {
             res.send('please log in first');
         }
         let dataset = {};
-        dataHelpers.getFavouritesForUser(userId)
+        dataHelpers.getFavouritesForUser(userId, null)
             .then(data => {
                 dataset.count = data[0].count;
-                return dataHelpers.getFavouritesForUser(userId, 20);
+                return dataHelpers.getFavouritesForUser(userId, 20, req.query);
             })
             .then(data => {
                 dataset.data = data;
@@ -74,6 +74,32 @@ module.exports = (dataHelpers) => {
             .catch(err => {
                 console.log('err:', err);
             });
+    });
+    //post to favorites database
+    router.post('/favorites', (req, res) => {
+        const sneaker_id = req.body.sneaker_id;
+        const user_id = req.session.userId;
+        if (!user_id) {
+            res.send('please login first');
+        }
+        const id_set = { sneaker_id, user_id };
+        dataHelpers.getFavouritesForUser(user_id, null, req.body)
+            .then(data => {
+                if (Number(data[0].count)) {
+                    res.send('Adding failed ... Sneakers existing in your favorites!!!');
+                } else {
+                    dataHelpers.addFavouritesForUser(id_set)
+                        .then(row => {
+                            res.send('Success! Sneakers added in your favorites');
+                        })
+                        .catch(err => {
+                            console.log(`failed to post into database`);
+                        });
+                }
+
+            });
+
+
     });
 
     router.get('/mylistings', (req, res) => {
@@ -89,11 +115,24 @@ module.exports = (dataHelpers) => {
         })
         .then(data => {
           dataset.data = data;
+          dataset.data.forEach((item) => item.userId = userId);
+          // console.log('dataset :', dataset.data);
           res.send(dataset);
         })
         .catch(err => {
           console.log('err:', err);
         });
+    })
+
+    //mark sold from my listings page
+    router.post('/marksold', (req, res) => {
+    console.log('req :', req.body);
+      dataHelpers.markItemsSold(req.body);
+    })
+
+    //delete item from mylisting page
+    router.post('/delete', (req, res) => {
+      dataHelpers.deleteItem(req.body);
     })
 
     //access to specific sneakers by id
