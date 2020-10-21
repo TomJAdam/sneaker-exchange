@@ -39,7 +39,7 @@ module.exports = (dataHelpers) => {
                 }
                 return null;
             })
-            .catch(console.log)
+            .catch(console.log);
     }
 
     router.post('/login', (req, res) => {
@@ -58,14 +58,14 @@ module.exports = (dataHelpers) => {
             })
     })
 
-  router.get('/checkLogin', (req, res) => {
-    const userId = req.session.userId;
-    if(!userId) {
-        res.send({error: "error"});
-        return ;
-    }
+    router.get('/checkLogin', (req, res) => {
+        const userId = req.session.userId;
+        if (!userId) {
+            res.send({ error: "error" });
+            return;
+        }
 
-  })
+    })
 
     // register
 
@@ -78,6 +78,7 @@ module.exports = (dataHelpers) => {
             .then((user) => {
                 console.log('user :', user);
                 if (!user) {
+
                     res.send({ error: "error" });
                     return;
                 }

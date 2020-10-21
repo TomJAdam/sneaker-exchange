@@ -25,6 +25,7 @@ module.exports = (dataHelpers) => {
             });
     });
 
+    // filter sneakers
     router.post('/', (req, res) => {
         const dataset = {};
         dataHelpers.sneakersListings(null, req.body)
@@ -54,6 +55,27 @@ module.exports = (dataHelpers) => {
             });
     });
 
+    //get request for fav
+    router.get('/favorites', (req, res) => {
+        const userId = req.session.userId;
+        if (!userId) {
+            res.send('please log in first');
+        }
+        let dataset = {};
+        dataHelpers.getFavouritesForUser(userId)
+            .then(data => {
+                dataset.count = data[0].count;
+                return dataHelpers.getFavouritesForUser(userId, 20);
+            })
+            .then(data => {
+                dataset.data = data;
+                res.send(dataset);
+            })
+            .catch(err => {
+                console.log('err:', err);
+            });
+    });
+
     //access to specific sneakers by id
     router.get('/:id', (req, res) => {
         dataHelpers.sneakersListings(true, req.params)
@@ -69,9 +91,7 @@ module.exports = (dataHelpers) => {
 
 
 
-    //   res.render("login.html");
 
-    // });
 
     return router;
 };

@@ -45,6 +45,14 @@ $(() => {
                 sneakersDetails(res[0]);
             });
     };
+    const getFavourites = () => {
+        $.get({
+                url: `api/sneakers/favorites`,
+            })
+            .then(res => {
+
+            });
+    };
 
 
     window.queries = {

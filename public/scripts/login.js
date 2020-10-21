@@ -76,36 +76,27 @@ $(() => {
                 $(".w3-top").append($loginAfter(response));
 
 
-            })
-    })
-    .then((response) => {
-      console.log("resposense.data",response);
-      $("main").toggle();
-      $(".login-register-forms").empty();
-      $("#nav-login-button").hide();
-      $("#nav-register-button").hide();
-      $(".w3-top").append($loginAfter(response));
-    })
+            });
+    });
 
-  $.get({
-    url: "/user/checkLogin",
-      })
-  .then((response) => {
-    console.log("resposense.data",response);
-    $("main").toggle();
-    $(".login-register-forms").empty();
-    $("#nav-login-button").hide();
-    $("#nav-register-button").hide();
-    $(".w3-top").append($loginAfter(response));
-  })
+    $.get({
+            url: "/user/checkLogin",
+        })
+        .then((response) => {
+            console.log("resposense.data", response);
+            $("main").toggle();
+            $(".login-register-forms").empty();
+            $("#nav-login-button").hide();
+            $("#nav-register-button").hide();
+            $(".w3-top").append($loginAfter(response));
+        });
 
 
-  //exit button
-  $(document).on("click", "#hide-button", () => {
-    $("main").show();
-    $(".login-register-forms").empty();
-  })
+    //exit button
+    $(document).on("click", "#hide-button", () => {
+        $("main").show();
+        $(".login-register-forms").empty();
+    });
 
 
 });
-
