@@ -90,7 +90,25 @@ module.exports = (dataHelpers) => {
   });
 
 
-
+  router.get('/mylistings', (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+      res.send('please log in first');
+    }
+    let dataset = {};
+    dataHelpers.getMyListings(userId)
+      .then(data => {
+        dataset.count = data[0].count;
+        return dataHelpers.getMyListings(userId, 20);
+      })
+      .then(data => {
+        dataset.data = data;
+        res.send(dataset);
+      })
+      .catch(err => {
+        console.log('err:', err);
+      });
+  })
 
 
   return router;
