@@ -111,7 +111,7 @@ module.exports = (dataHelpers) => {
         dataHelpers.getMyListings(userId)
             .then(data => {
                 dataset.count = data[0].count;
-                return dataHelpers.getMyListings(userId);
+                return dataHelpers.getMyListings(userId, 20, req.query);
             })
             .then(data => {
                 dataset.data = data;
