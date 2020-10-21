@@ -108,15 +108,14 @@ module.exports = (dataHelpers) => {
             res.send('please log in first');
         }
         let dataset = {};
-        dataHelpers.getMyListings(16)
+        dataHelpers.getMyListings(userId)
             .then(data => {
                 dataset.count = data[0].count;
-                return dataHelpers.getMyListings(16, 20, req.query);
+                return dataHelpers.getMyListings(userId, 20, req.query);
             })
             .then(data => {
                 dataset.data = data;
                 dataset.data.forEach((item) => item.userId = userId);
-                // console.log('dataset :', dataset.data);
                 res.send(dataset);
             })
             .catch(err => {

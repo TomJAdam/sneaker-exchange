@@ -50,7 +50,7 @@ $(() => {
                 url: `api/sneakers/${endpoint}?&page=${currentPage}`,
             })
             .then(res => {
-                console.log(res);
+
                 const { count, data } = res;
                 const lastPage = Math.ceil(count / limit);
                 $('#sneakers-detail').remove();
