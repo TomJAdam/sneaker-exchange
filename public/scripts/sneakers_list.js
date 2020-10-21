@@ -53,6 +53,12 @@ $(() => {
             queries.getDetails(id);
         });
 
+        //adding event listener for fav button
+        ($sneaker).find('.fa-gratipay').on('click', function(e) {
+            e.stopPropagation();
+            queries.addToMyFavorites(id);
+        });
+
 
 
         $listGrid.append($sneaker);
