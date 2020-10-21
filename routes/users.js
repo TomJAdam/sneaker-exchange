@@ -69,7 +69,6 @@ module.exports = (dataHelpers) => {
 
         dataHelpers.getUserWithID(userId)
             .then(user => {
-
                 res.send({
                     user: { name: user.name, email: user.email, phone: user.phone, id: user.id }
                 })
@@ -79,15 +78,15 @@ module.exports = (dataHelpers) => {
         // console.log("user is: ", user);
     })
 
+    //logout
     router.post('/logout', (req, res) => {
         console.log("logout test");
-
-        req.session.userId = null;
+        req.session = null;
         res.send({});
 
     });
-    // register
 
+    // register
     router.get('/register', (req, res) => {
         res.render('register');
     });

@@ -1,7 +1,7 @@
 $(() => {
 
 
-    $("#nav-login-button").click(function(e) {
+    $(document).on("click", "#nav-login-button", function(e) {
         e.preventDefault();
         console.log("nav");
         $("main").toggle();
@@ -46,7 +46,7 @@ $(() => {
                 <a id="sell-item" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">sell</a>
                 <a id="my-listings" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">my listings</a>
 
-                <a id="nav-logout-button" href="/" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
+                <a id="nav-logout-button" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">logout</a>
 
                 <!-- <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a> -->
             </div>
@@ -61,21 +61,19 @@ $(() => {
     $(document).on("submit", "#login-form", function(e) {
         e.preventDefault();
         const data = $(this).serialize();
-        console.log('data :', data);
+        // console.log('data :', data);
         $('.post-item form').trigger("reset");
         $.post({
                 url: "/user/login",
                 data: data
             })
             .then((response) => {
-                console.log("resposense.data", response);
+                // console.log("resposense.data", response);
                 $("main").toggle();
                 $(".login-register-forms").empty();
                 $("#nav-login-button").hide();
                 $("#nav-register-button").hide();
                 $(".w3-top").append($loginAfter(response));
-
-
             });
     });
 
@@ -96,7 +94,7 @@ $(() => {
 
 
 
-    //exit button ! needs work !
+    //exit button
     $(document).on("click", "#hide-button", () => {
         $("main").show();
         $(".login-register-forms").empty();
