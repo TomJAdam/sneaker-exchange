@@ -138,8 +138,25 @@ nav a:hover {
 
 #post-sneaker {
   display: flex;
-  justify-content: center;
   padding-bottom: 2em;
+  border-top: 5px solid white;
+}
+
+#post-sneaker .post-sneaker-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #21d192;
+}
+
+#post-sneaker .post-sneaker-header i {
+  margin: 2.2em;
+  font-size: 150%;
+}
+
+#post-sneaker .post-sneaker-header i:hover {
+  color: white;
+  cursor: pointer;
 }
 
 #post-sneaker .post-item {
@@ -159,8 +176,6 @@ nav a:hover {
 }
 
 #post-sneaker .post-item h3 {
-  text-align: center;
-  background-color: #21d192;
   padding: 1.5em;
 }
 

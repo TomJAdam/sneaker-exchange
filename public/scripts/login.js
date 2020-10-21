@@ -1,14 +1,12 @@
-
-
 $(() => {
 
 
-  $("#nav-login-button").click(function(e) {
-    e.preventDefault();
-   console.log("nav");
-    $("main").toggle();
+    $("#nav-login-button").click(function(e) {
+        e.preventDefault();
+        console.log("nav");
+        $("main").toggle();
 
-    const $loginForm = $(`
+        const $loginForm = $(`
     <div class="signup-header">
     <h3>Login</h3>
     <i id="hide-button" class="fas fa-times-circle"></i>
@@ -26,15 +24,15 @@ $(() => {
     `)
 
 
-    if($(".login-register-forms").is(':empty')) {
-      $(".login-register-forms").append($loginForm);
-    } else {
-      $(".login-register-forms").empty();
-    }
+        if ($(".login-register-forms").is(':empty')) {
+            $(".login-register-forms").append($loginForm);
+        } else {
+            $(".login-register-forms").empty();
+        }
 
-  })
-  const $loginAfter = (user) => {
-    return $(`
+    })
+    const $loginAfter = (user) => {
+        return $(`
     <nav>
     <div class="w3-top">
         <div class="w3-white w3-xlarge">
@@ -43,29 +41,42 @@ $(() => {
 
                 <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">search</a>
 
-                <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">favorites</a>
+                <a id="favourites" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">favorites</a>
 
-                <a id="search" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">Sell</a>
+                <a id="sell-item" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">sell</a>
+                <a id="my-listings" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-padding-16">my listings</a>
 
                 <a id="nav-login-button" href="/user/login" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-black w3-right w3-padding-16">Logout</a>
 
-                <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a>
+                <!-- <a id="nav-register-button" href="/user/register" class="nav-item nav-link w3-hover-none w3-border-white w3-right w3-padding-16">Logged in as: ${user["user"]["email"]}</a> -->
             </div>
 
         </div>
     </div>
   </nav>
-  `)}
+  `)
+    };
 
 
-  $(document).on("submit", "#login-form", function(e) {
-    e.preventDefault();
-    const data = $(this).serialize();
-    console.log('data :', data);
-    $('.post-item form').trigger("reset");
-    $.post({
-      url: "/user/login",
-      data: data
+    $(document).on("submit", "#login-form", function(e) {
+        e.preventDefault();
+        const data = $(this).serialize();
+        console.log('data :', data);
+        $('.post-item form').trigger("reset");
+        $.post({
+                url: "/user/login",
+                data: data
+            })
+            .then((response) => {
+                console.log("resposense.data", response);
+                $("main").toggle();
+                $(".login-register-forms").empty();
+                $("#nav-login-button").hide();
+                $("#nav-register-button").hide();
+                $(".w3-top").append($loginAfter(response));
+
+
+            })
     })
     .then((response) => {
       console.log("resposense.data",response);
@@ -74,11 +85,8 @@ $(() => {
       $("#nav-login-button").hide();
       $("#nav-register-button").hide();
       $(".w3-top").append($loginAfter(response));
-
-
     })
 
-  })
   $.get({
     url: "/user/checkLogin",
       })
@@ -92,10 +100,12 @@ $(() => {
   })
 
 
-  //exit button ! needs work !
+  //exit button
   $(document).on("click", "#hide-button", () => {
     $("main").show();
     $(".login-register-forms").empty();
-})
-})
+  })
+
+
+});
 
