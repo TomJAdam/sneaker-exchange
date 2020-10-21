@@ -1,7 +1,7 @@
 $(() => {
 
     $(document).on("click", "#my-listings", () => {
-        console.log('lets get this party started!');
+      queries.getAPIListings(20, 1, 'mylistings');
     });
 
 });

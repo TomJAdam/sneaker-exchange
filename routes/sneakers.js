@@ -76,6 +76,26 @@ module.exports = (dataHelpers) => {
             });
     });
 
+    router.get('/mylistings', (req, res) => {
+      const userId = req.session.userId;
+      if (!userId) {
+        res.send('please log in first');
+      }
+      let dataset = {};
+      dataHelpers.getMyListings(userId)
+        .then(data => {
+          dataset.count = data[0].count;
+          return dataHelpers.getMyListings(userId);
+        })
+        .then(data => {
+          dataset.data = data;
+          res.send(dataset);
+        })
+        .catch(err => {
+          console.log('err:', err);
+        });
+    })
+
     //access to specific sneakers by id
     router.get('/:id', (req, res) => {
         dataHelpers.sneakersListings(true, req.params)
@@ -88,7 +108,6 @@ module.exports = (dataHelpers) => {
                     .json({ error: err.message });
             });
     });
-
 
 
 

@@ -25,7 +25,7 @@ $(() => {
                 anchorPage.attr(`href`, href);
                 anchorPage.click(function(e) {
                     e.preventDefault();
-                    queries.getFavourites(20, content, endpoint);
+                    queries.getAPIListings(20, content, endpoint);
                 });
             }
         } else {
