@@ -1,14 +1,12 @@
-
-
 $(() => {
 
 
-  $("#nav-login-button").click(function(e) {
-    e.preventDefault();
-   console.log("nav");
-    $("main").toggle();
+    $("#nav-login-button").click(function(e) {
+        e.preventDefault();
+        console.log("nav");
+        $("main").toggle();
 
-    const $loginForm = $(`
+        const $loginForm = $(`
     <div class="signup-header">
     <h3>Login</h3>
     <i id="hide-button" class="fas fa-times-circle"></i>
@@ -26,15 +24,15 @@ $(() => {
     `)
 
 
-    if($(".login-register-forms").is(':empty')) {
-      $(".login-register-forms").append($loginForm);
-    } else {
-      $(".login-register-forms").empty();
-    }
+        if ($(".login-register-forms").is(':empty')) {
+            $(".login-register-forms").append($loginForm);
+        } else {
+            $(".login-register-forms").empty();
+        }
 
-  })
-  const $loginAfter = (user) => {
-    return $(`
+    })
+    const $loginAfter = (user) => {
+        return $(`
     <nav>
     <div class="w3-top">
         <div class="w3-white w3-xlarge">
@@ -55,47 +53,47 @@ $(() => {
         </div>
     </div>
   </nav>
-  `)}
+  `)
+    };
 
 
-  $(document).on("submit", "#login-form", function(e) {
-    e.preventDefault();
-    const data = $(this).serialize();
-    console.log('data :', data);
-    $('.post-item form').trigger("reset");
-    $.post({
-      url: "/user/login",
-      data: data
+    $(document).on("submit", "#login-form", function(e) {
+        e.preventDefault();
+        const data = $(this).serialize();
+        console.log('data :', data);
+        $('.post-item form').trigger("reset");
+        $.post({
+                url: "/user/login",
+                data: data
+            })
+            .then((response) => {
+                console.log("resposense.data", response);
+                $("main").toggle();
+                $(".login-register-forms").empty();
+                $("#nav-login-button").hide();
+                $("#nav-register-button").hide();
+                $(".w3-top").append($loginAfter(response));
+
+
+            })
+
     })
-    .then((response) => {
-      console.log("resposense.data",response);
-      $("main").toggle();
-      $(".login-register-forms").empty();
-      $("#nav-login-button").hide();
-      $("#nav-register-button").hide();
-      $(".w3-top").append($loginAfter(response));
+    $.get({
+            url: "/user/checkLogin",
+        })
+        .then((response) => {
+            console.log("resposense.data", response);
+            $("main").toggle();
+            $(".login-register-forms").empty();
+            $("#nav-login-button").hide();
+            $("#nav-register-button").hide();
+            $(".w3-top").append($loginAfter(response));
+        });
 
 
-    })
-
-  })
-  $.get({
-    url: "/user/checkLogin",
-      })
-  .then((response) => {
-    console.log("resposense.data",response);
-    $("main").toggle();
-    $(".login-register-forms").empty();
-    $("#nav-login-button").hide();
-    $("#nav-register-button").hide();
-    $(".w3-top").append($loginAfter(response));
-  })
-
-
-  //exit button ! needs work !
-  $(document).on("click", "#hide-button", () => {
-    $("main").show();
-    $(".login-register-forms").empty();
-})
-})
-
+    // exit button!needs work!
+    $(document).on("click", "#hide-button", () => {
+        $("main").show();
+        $(".login-register-forms").empty();
+    });
+});

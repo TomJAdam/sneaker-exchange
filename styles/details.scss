@@ -40,6 +40,20 @@
     .main {
         margin: 3em auto;
         width: 70%;
+        &.sold {
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                content: '';
+                width: 40rem;
+                height: 20rem;
+                background: url(../images/sold.png) no-repeat center;
+                background-size: 40rem 20rem;
+            }
+        }
     }
     .foot {
         position: relative;

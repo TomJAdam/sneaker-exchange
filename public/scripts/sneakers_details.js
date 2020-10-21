@@ -1,20 +1,20 @@
 $(() => {
 
-    window.sneakersDetails = (data) => {
-        const {
-            title,
-            brand,
-            price,
-            size,
-            model_year,
-            main_photo_url,
-            date_posted,
-            country,
-            city,
-            province,
-            sold
-        } = data;
-        const $sneakers = $(`<article id='sneakers-detail'>
+            window.sneakersDetails = (data) => {
+                    const {
+                        title,
+                        brand,
+                        price,
+                        size,
+                        model_year,
+                        main_photo_url,
+                        date_posted,
+                        country,
+                        city,
+                        province,
+                        sold
+                    } = data;
+                    const $sneakers = $(`<article id='sneakers-detail'>
       <div class='head'>
           <h1>${title}</h3>
               <ul>
@@ -23,7 +23,7 @@ $(() => {
                   <li>${country}</li>
               </ul>
       </div>
-      <div class='main'>
+      <div class='main ${sold ? `sold` : ''}'>
           <img src=${main_photo_url} alt="">
       </div>
       <div class='foot'>
