@@ -5,6 +5,7 @@
 
 #pagination #page-anchor a:hover {
   text-decoration: none !important;
+  background-color: #22d192 !important;
   border-radius: 5px;
   box-shadow: 0px 2px 9px 3px #22d19179 !important;
 }
