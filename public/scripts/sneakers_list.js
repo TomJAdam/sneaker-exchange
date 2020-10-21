@@ -11,11 +11,11 @@ $(() => {
             thumbnail_photo_url,
             title,
             price
-          } = data;
+        } = data;
 
-          let $sneaker;
+        let $sneaker;
 
-          if (userId === owner_id) {
+        if (userId === owner_id) {
             $sneaker = $(`
             <div class="w3-quarter">
                   <img src=${thumbnail_photo_url}>
@@ -31,7 +31,7 @@ $(() => {
               </div>
             `);
 
-          } else {
+        } else {
             $sneaker = $(`
             <div class="w3-quarter">
                   <img src=${thumbnail_photo_url}>
@@ -45,7 +45,7 @@ $(() => {
                   </div>
               </div>
             `);
-          }
+        }
 
 
         ($sneaker).on('click', '#buy-now-button', e => {
