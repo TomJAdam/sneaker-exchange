@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<!--
+    <!--
     <link rel=“stylesheet” href=“/styles/forms.css”> -->
 
     <link rel="stylesheet" href="/styles/layout.css">
@@ -62,75 +62,75 @@
 
     <!-- search bar -->
     <div class="master-search-bar">
-    <div class="search-bar">
-      <div class="form-inputs">
-          <form action="/sneakers" method="get">
-              <div class="w3-container w3-cell">
-                  <label for="brand-search"></label>
-                  <input type="text" name="brand" placeholder="brand..">
-              </div>
+        <div class="search-bar">
+            <div class="form-inputs">
+                <form action="/sneakers" method="get">
+                    <div class="w3-container w3-cell">
+                        <label for="brand-search"></label>
+                        <input type="text" name="brand" placeholder="brand..">
+                    </div>
 
-              <div class="w3-container w3-cell">
-                  <label for="min-price-search"></label>
-                  <input type="number" name="min_price" placeholder="min price...">
+                    <div class="w3-container w3-cell">
+                        <label for="min-price-search"></label>
+                        <input type="number" name="min_price" placeholder="min price...">
 
-              </div>
+                    </div>
 
-              <div class="w3-container w3-cell">
-                  <label for="max-price-search"></label>
-                  <input type="number" name="max_price" placeholder="max price...">
-              </div>
+                    <div class="w3-container w3-cell">
+                        <label for="max-price-search"></label>
+                        <input type="number" name="max_price" placeholder="max price...">
+                    </div>
 
-              <div class="w3-container w3-cell">
-                  <label for="size-search"></label>
-                  <input type="number" name="size" placeholder="size...">
-              </div>
+                    <div class="w3-container w3-cell">
+                        <label for="size-search"></label>
+                        <input type="number" name="size" placeholder="size...">
+                    </div>
 
-              <div class="w3-container w3-cell">
-                  <label for="size-city"></label>
-                  <input type="text" name="city" placeholder="city...">
-              </div>
-      </div>
-      <div class="w3-container w3-cell w3-display-right">
-          <button class="w3-button w3-white w3-large w3-border"><b>search</b></button>
-          <i id="hide-button" class="fas fa-times-circle"></i>
-      </div>
-      </form>
-  </div>
-</div>
-
-<!-- Post sneaker form! -->
-<div id="post-sneaker">
-  <div class="post-item">
-    <div class="post-sneaker-header">
-      <h3><b>post sneakers</b></h3>
-      <i id="hide-button" class="fas fa-times-circle"></i>
+                    <div class="w3-container w3-cell">
+                        <label for="size-city"></label>
+                        <input type="text" name="city" placeholder="city...">
+                    </div>
+            </div>
+            <div class="w3-container w3-cell w3-display-right">
+                <button class="w3-button w3-white w3-large w3-border"><b>search</b></button>
+                <i id="hide-button" class="fas fa-times-circle"></i>
+            </div>
+            </form>
+        </div>
     </div>
-      <form class="form-group mb-2" action="/login" method="POST">
-        <div>
-          <label for="title">owner id</label>
-            <input class="form-control" type="number" name="owner_id" placeholder="title...">
 
-                <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" placeholder="title...">
+    <!-- Post sneaker form! -->
+    <div id="post-sneaker">
+        <div class="post-item">
+            <div class="post-sneaker-header">
+                <h3><b>post sneakers</b></h3>
+                <i id="hide-button" class="fas fa-times-circle"></i>
+            </div>
+            <form class="form-group mb-2" action="/login" method="POST">
+                <div>
+                    <label for="title">owner id</label>
+                    <input class="form-control" type="number" name="owner_id" placeholder="title...">
 
-                <label for="brand">Brand</label>
-                <input class="form-control" type="text" name="brand" placeholder="brand...">
+                    <label for="title">Title</label>
+                    <input class="form-control" type="text" name="title" placeholder="title...">
 
-                <label for="brand">Price</label>
-                <input class="form-control" type="number" name="price" placeholder="price...">
+                    <label for="brand">Brand</label>
+                    <input class="form-control" type="text" name="brand" placeholder="brand...">
 
-                <label for="size">Size</label>
-                <input class="form-control" type="number" name="size" placeholder="size...">
+                    <label for="brand">Price</label>
+                    <input class="form-control" type="number" name="price" placeholder="price...">
 
-                <label for="model_year">Model year</label>
-                <input class="form-control" type="number" name="model_year" placeholder="year...">
+                    <label for="size">Size</label>
+                    <input class="form-control" type="number" name="size" placeholder="size...">
 
-                <label for="thumbnail_photo_url">thumbnail_photo_url</label>
-                <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
+                    <label for="model_year">Model year</label>
+                    <input class="form-control" type="number" name="model_year" placeholder="year...">
 
-                <label for="main_photo_url">thumbnail_photo_url</label>
-                <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
+                    <label for="thumbnail_photo_url">thumbnail_photo_url</label>
+                    <input class="form-control" type="url" name="thumbnail_photo_url" placeholder="thumbnail_photo_url">
+
+                    <label for="main_photo_url">thumbnail_photo_url</label>
+                    <input class="form-control" type="url" name="main_photo_url" placeholder="thumbnail_photo_url">
 
                     <label for="date_posted">date posted MAKE TIMESTAMP</label>
                     <input class="form-control" type="date" name="date_posted">
@@ -333,6 +333,7 @@
     <script src="./scripts/login.js"></script>
     <script src="./scripts/register.js"></script>
     <script src="./scripts/my-listings.js"></script>
+    <script src="./scripts/my_favorites.js"></script>
     <script src="./scripts/logout.js"></script>
 </body>
 

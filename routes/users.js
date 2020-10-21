@@ -26,9 +26,6 @@ module.exports = (dataHelpers) => {
 
 
     // login
-    router.get('/login', (req, res) => {
-        res.render('login');
-    });
 
     const login = (email, password) => {
         return dataHelpers.getUserWithEmail(email)
@@ -39,7 +36,7 @@ module.exports = (dataHelpers) => {
                 }
                 return null;
             })
-            .catch(console.log)
+            .catch(console.log);
     }
 
     router.post('/login', (req, res) => {
@@ -58,46 +55,42 @@ module.exports = (dataHelpers) => {
             })
     })
 
-  router.get('/checkLogin', (req, res) => {
-    const userId = req.session.userId;
-    if(!userId) {
-      //  res.send({error: "error"});
-       res.status(401).send("Not logged in!");
-       return ;
-    }
-    //userId from session is only an integer, take integer and look for user in database using that id.
+    router.get('/checkLogin', (req, res) => {
+        const userId = req.session.userId;
+        if (!userId) {
+            //  res.send({error: "error"});
+            res.status(401).send("Not logged in!");
+            return;
+        }
+        //userId from session is only an integer, take integer and look for user in database using that id.
 
-     dataHelpers.getUserWithID(userId)
-    .then(user => {
+        dataHelpers.getUserWithID(userId)
+            .then(user => {
+                res.send({
+                    user: { name: user.name, email: user.email, phone: user.phone, id: user.id }
+                })
 
-      res.send({ user: { name: user.name, email: user.email, phone: user.phone, id: user.id }
-      })
+            })
+            .catch(console.log);
+        // console.log("user is: ", user);
+    })
 
-      })
-      .catch(console.log);
-    // console.log("user is: ", user);
-  })
+    //logout
+    router.post('/logout', (req, res) => {
+        console.log("logout test");
+        req.session = null;
+        res.send({});
 
-  router.post('/logout', (req, res) => {
-
-
-    req.session.userId = null;
-    console.log("cookie in logout", req.session.userId );
-    // req.session = null;
-    res.redirect('/login');
-
-  });
-    // register
-
-    router.get('/register', (req, res) => {
-        res.render('register');
     });
+
+    // register
 
     router.post('/register', (req, res) => {
         dataHelpers.addUser(req.body)
             .then((user) => {
                 console.log('user :', user);
                 if (!user) {
+
                     res.send({ error: "error" });
                     return;
                 }
