@@ -30,7 +30,7 @@ $(() => {
         <div class='head'>
             <h1>${title}</h3>
             <a id="go-back" href=${href}></a>
-            <a class="mail" target="_blank" href="mailto:${res.email}" type="submit" <button>E-Mail me</a>
+            <a class="mail" target="_blank" href="mailto:${res.email}?subject=I want to buy your shoes!&body=Hi There! I'm interested in buying your shoes." type="submit" <button>E-Mail Seller</a>
                 <ul>
                     <li>${city}</li>
                     <li>${province}</li>
@@ -87,5 +87,5 @@ $(() => {
 
 
 
-  
+
 });
