@@ -1,8 +1,10 @@
 function logOut() {
+
+
   return $.ajax({
     method: "POST",
     url: "/user/logout",
-  })
+  });
 }
 
 $(() => {
@@ -12,8 +14,8 @@ $(() => {
     $.post({
       url: "/user/logout"
     })
-    .then(() => {
-      const $noUserNav = `
+      .then(() => {
+        const $noUserNav = `
       <nav>
       <div class="w3-top">
           <div class="w3-white w3-xlarge">
@@ -26,13 +28,12 @@ $(() => {
               </div>
           </div>
       </nav>
-      `
-      $(".w3-top").append($noUserNav);
-    })
+      `;
+        $(".w3-top").append($noUserNav);
+      });
   });
 
 
 
 
-})
-
+});

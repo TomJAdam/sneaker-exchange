@@ -1,22 +1,23 @@
 $(() => {
 
 
-    //append sneakers to list
-    window.appendSneakers = (data) => {
-        const $listGrid = $('#list-grid');
-        const {
-            id,
-            owner_id,
-            userId,
-            thumbnail_photo_url,
-            title,
-            price,
-        } = data;
+  //append sneakers to list
+  window.appendSneakers = (data) => {
 
-        let $sneaker;
+    const $listGrid = $('#list-grid');
+    const {
+      id,
+      owner_id,
+      userId,
+      thumbnail_photo_url,
+      title,
+      price,
+    } = data;
 
-        if (userId === owner_id) {
-            $sneaker = $(`
+    let $sneaker;
+
+    if (userId === owner_id) {
+      $sneaker = $(`
             <div class="w3-quarter">
                   <img src=${thumbnail_photo_url}>
                   <div class='info'>
@@ -30,8 +31,8 @@ $(() => {
               </div>
             `);
 
-        } else {
-            $sneaker = $(`
+    } else {
+      $sneaker = $(`
             <div class="w3-quarter">
                   <img src=${thumbnail_photo_url}>
                   <div class='info'>
@@ -44,24 +45,25 @@ $(() => {
                   </div>
               </div>
             `);
-        }
+    }
+
+    /* buy-now button to get sneakers' details */
+    $sneaker.on('click', '#buy-now-button', e => {
+      e.preventDefault();
+      const href = $('#page-anchor').children('.current-page').attr('href');
+      queries.getDetails(id, href);
+    });
+
+    /* adding event listener for fav button */
+    $sneaker.find('.fa-gratipay').on('click', function(e) {
+      e.stopPropagation();
+      queries.addToMyFavorites(id);
+    });
 
 
-        ($sneaker).on('click', '#buy-now-button', e => {
-            e.preventDefault();
-            queries.getDetails(id);
-        });
 
-        //adding event listener for fav button
-        ($sneaker).find('.fa-gratipay').on('click', function(e) {
-            e.stopPropagation();
-            queries.addToMyFavorites(id);
-        });
-
-
-
-        $listGrid.append($sneaker);
-    };
+    $listGrid.append($sneaker);
+  };
 
 
 

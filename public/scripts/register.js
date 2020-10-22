@@ -25,15 +25,16 @@ $(() => {
         <button type="submit" class="btn btn-primary">Register</button>
       </div>
     </form>
-    `)
+    `);
 
-    if($(".login-register-forms").is(':empty')) {
+    if ($(".login-register-forms").is(':empty')) {
       $(".login-register-forms").append($registerForm);
     } else {
       $(".login-register-forms").empty();
     }
 
-  })
+  });
+
 
   const $registerAfter = (user) => {
     return $(`
@@ -58,50 +59,51 @@ $(() => {
     </div>
 </div>
 </nav>
-`)
-};
+`);
+  };
 
   $(document).on("submit", "#register-form", function(e) {
     e.preventDefault();
     const data = $(this).serialize();
-    // console.log('data :', data);
     $('.post-item form').trigger("reset");
+
     $.post({
       url: "/user/register",
       data: data
     })
-    .then((response) => {
-      // console.log("resposense.data", response);
-      $("main").toggle();
-      $(".login-register-forms").empty();
-      $("#nav-login-button").hide();
-      $("#nav-register-button").hide();
-      $(".w3-top").append($registerAfter(response));
+      .then((response) => {
 
+        $("main").toggle();
+        $(".login-register-forms").empty();
+        $("#nav-login-button").hide();
+        $("#nav-register-button").hide();
+        $(".w3-top").append($registerAfter(response));
+      });
 
-  })
-  })
+  });
 
   $.get({
     url: "/user/checkLogin",
 
-      })
-  .then((response) => {
-    console.log("resposense.data",response);
-    // $("main").toggle();
-    $(".login-register-forms").empty();
-    $("#nav-login-button").hide();
-    $("#nav-register-button").hide();
-    $(".w3-top").html($registerAfter(response));
-  }, () => {
-    // in case of error do javascript here, there is no session.
-    // return res.status(401).send("No session key!");
   })
+    .then((response) => {
+
+      $(".login-register-forms").empty();
+      $("#nav-login-button").hide();
+      $("#nav-register-button").hide();
+      $(".w3-top").html($registerAfter(response));
+    }, () => {
+      // in case of error do javascript here, there is no session.
+      // return res.status(401).send("No session key!");
+    });
 
   //exit button
   $(document).on("click", "#hide-button", () => {
     $("main").show();
     $(".login-register-forms").empty();
-  })
+  });
 
-})
+
+
+
+});
