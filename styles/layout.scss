@@ -56,13 +56,13 @@ nav {
   }
   .form-inputs form {
     display: flex;
-    align-items: center;
+    justify-content: center;
   }
 
   .button-group {
     display: flex;
     align-items: center;
-    margin-top: 1em;
+    // margin-top: 1em;
   }
 
   input {
@@ -77,7 +77,7 @@ nav {
   }
   button {
     margin-right: 1.5em;
-    margin-bottom: .65em;
+    // margin-bottom: .65em;
     height: 40px;
     outline: none;
   }

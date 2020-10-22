@@ -56,13 +56,12 @@ nav a:hover {
 
 .search-bar .form-inputs form {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .search-bar .button-group {
   display: flex;
   align-items: center;
-  margin-top: 1em;
 }
 
 .search-bar input {
@@ -78,7 +77,6 @@ nav a:hover {
 
 .search-bar button {
   margin-right: 1.5em;
-  margin-bottom: .65em;
   height: 40px;
   outline: none;
 }
