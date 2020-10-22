@@ -49,7 +49,7 @@ window.sneakersDetails = (data) => {
                 <li><strong>Price</strong>${price}</li>
                 <li><strong>In Stock</strong>${sold ? 'N/A' : 'available'}</li>
                 <li><strong>Year of Model</strong>${model_year}</li>
-                <li><strong>Release Date</strong>${date_posted.substr(0, 10)}</li>
+                <li><strong>Release Date</strong>${date_posted}</li>
 
             </ul>
 
