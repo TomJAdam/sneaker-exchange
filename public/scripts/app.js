@@ -50,6 +50,7 @@ $(() => {
                 url: `api/sneakers/${endpoint}?&page=${currentPage}`,
             })
             .then(res => {
+
                 const { count, data } = res;
                 const lastPage = Math.ceil(count / limit);
                 $('#sneakers-detail').remove();
@@ -71,22 +72,7 @@ $(() => {
                 alert(res);
             });
     };
-    const getMyListings = (limit, currentPage = 1) => {
-        $.get({
-                url: `api/sneakers/myListings`,
-            })
-            .then(res => {
-                const { count, data } = res;
-                const lastPage = Math.ceil(count / limit);
-                $('#sneakers-detail').remove();
-                $('#list-grid').empty();
-                data.forEach(row => {
-                    appendSneakers(row);
-                });
-                $('#page-anchor').empty();
-                pagination(currentPage, lastPage, null, 'favorites');
-            });
-    };
+
 
 
     window.queries = {
@@ -94,8 +80,7 @@ $(() => {
         sortSneakers,
         getDetails,
         getAPIListings,
-        addToMyFavorites,
-        getMyListings
+        addToMyFavorites
     };
 
 
