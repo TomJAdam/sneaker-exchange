@@ -104,6 +104,15 @@ module.exports = (dataHelpers) => {
             })
     })
 
+    // get email from user
+    router.get('/email', (req, res) => {
+      console.log('req.query.ownerId :', req.query.ownerId);
+      return dataHelpers.getUserWithOwnerId(req.query.ownerId)
+      .then(data => {
+        res.send(data);
+      })
+    })
+
     // send back data to different listing pages
     router.get('/:page', (req, res) => {
         dataHelpers.sneakersListings({}, 5, req.params.page)

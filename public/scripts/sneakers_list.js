@@ -10,7 +10,7 @@ $(() => {
             userId,
             thumbnail_photo_url,
             title,
-            price
+            price,
         } = data;
 
         let $sneaker;

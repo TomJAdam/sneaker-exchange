@@ -11,6 +11,9 @@ $(() => {
             url: "api/sneakers/new",
             data: data
         })
+        .then((res) => {
+          queries.getAPIListings(20, 1, 'mylistings');
+        })
     });
 
 
