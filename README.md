@@ -1,8 +1,6 @@
-LHL Node Skeleton
-=========
-
 # SneakerExchange
 ## A platform for buying and selling premium sneakers
+=========
 
 A project built by Lighthouse Labs students.
 
@@ -15,8 +13,9 @@ Please enjoy our project and stay fresh, buy sneakers!
 
 ## Screenshots
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["landing page/login"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/landing-page.png)
+!["screenshot description"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/landing-page.png)
+!["Sneaker details page"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/details-page.png)
 
 
 ## Getting Started
