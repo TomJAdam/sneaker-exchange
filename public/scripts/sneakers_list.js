@@ -23,11 +23,10 @@ $(() => {
                   <h4>${title}</h4>
                   <h3><b>$${price}</b></h3>
                   <footer>
-                  <button id="mark-sold-button" class="w3-button w3-white w3-border w3-border-red w3-hover-red w3-round-large">mark sold!</button>
-                  <i id="delete-listing" class="fas fa-times-circle"></i>
+                  <button data-sneaker-id="${id}" id="mark-sold-button" class="w3-button w3-white w3-border w3-border-red w3-hover-red w3-round-large">mark sold!</button>
+                  <i data-sneaker-id="${id}" id="delete-listing" class="fas fa-times-circle"></i>
                   </footer>
                   </div>
-                  <script>$(".w3-quarter").data('userData', {sneakerId: ${id}});</script>
               </div>
             `);
 

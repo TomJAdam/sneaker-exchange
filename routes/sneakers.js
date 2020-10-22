@@ -126,13 +126,16 @@ module.exports = (dataHelpers) => {
 
     //mark sold from my listings page
     router.post('/marksold', (req, res) => {
-    console.log('req :', req.body);
-      dataHelpers.markItemsSold(req.body);
+      dataHelpers.markItemSold(req.body.sneakerId)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(console.log)
     })
 
     //delete item from mylisting page
     router.post('/delete', (req, res) => {
-      dataHelpers.deleteItem(req.body);
+      dataHelpers.deleteItem(req.body.sneakerId);
     })
 
     //access to specific sneakers by id

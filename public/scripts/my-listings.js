@@ -7,17 +7,21 @@ $(() => {
 
 
     // mark sold
-    $(document).on("click", "#mark-sold-button", function() {
-
+    $(document).on("click", "#mark-sold-button", function(e) {
+      let id = $(this).attr('data-sneaker-id');
       $.post({
         url: "api/sneakers/marksold",
-        data: $(this).closest(".w3-quarter").data("userData").sneakerId
+        data: {sneakerId: id}
       })
     })
 
     // delete
     $(document).on('click', '#delete-listing', function() {
-      console.log('delete button')
+      let id = $(this).attr('data-sneaker-id');
+      $.post({
+        url: "api/sneakers/delete",
+        data: {sneakerId: id}
+      })
     })
 
 });
