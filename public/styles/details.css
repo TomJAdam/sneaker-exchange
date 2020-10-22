@@ -15,11 +15,25 @@
   padding: 0 1em;
 }
 
+#sneakers-detail .head {
+  position: relative;
+}
+
 #sneakers-detail .head h1 {
   font-size: 5em;
   margin: 0.3em auto;
   text-shadow: 4px 4px 6px #38373741;
   text-transform: capitalize;
+}
+
+#sneakers-detail .head #go-back {
+  position: absolute;
+  top: -5rem;
+  left: -10rem;
+  width: 13rem;
+  height: 15rem;
+  background: url(../images/go-back.png) no-repeat center;
+  background-size: 13rem 15rem;
 }
 
 #sneakers-detail .head .mail {
