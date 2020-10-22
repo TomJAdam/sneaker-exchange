@@ -47,7 +47,6 @@ $(() => {
                 <li><strong>Price</strong>${price}</li>
                 <li><strong>In Stock</strong>${sold ? 'N/A' : 'available'}</li>
                 <li><strong>Year of Model</strong>${model_year}</li>
-                <li><strong>Release Date</strong>${date_posted}</li>
             </ul>
         </div>
         </article>`);
