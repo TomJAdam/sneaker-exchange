@@ -46,9 +46,11 @@ module.exports = (dataHelpers) => {
 
     //post to sneaker database
     router.post('/new', (req, res) => {
-        dataHelpers.addSneaker(req.body)
-            .then((newSneaker) => {
-                console.log('success!', newSneaker);
+      const data = req.body
+      data.owner_id = req.session.userId
+        dataHelpers.addSneaker(data)
+            .then(() => {
+                console.log('success!');
             })
             .catch(err => {
                 console.log('err:', err);
