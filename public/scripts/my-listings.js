@@ -18,6 +18,7 @@ $(() => {
     // delete
     $(document).on('click', '#delete-listing', function() {
       let id = $(this).attr('data-sneaker-id');
+      $(this).closest(".w3-quarter").remove();
       $.post({
         url: "api/sneakers/delete",
         data: {sneakerId: id}

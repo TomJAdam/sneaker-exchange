@@ -13,7 +13,7 @@ CREATE TABLE sneakers (
   thumbnail_photo_url TEXT NOT NULL,
   main_photo_url TEXT NOT NULL,
 
-  date_posted DATE NOT NULL,
+  date_posted TIMESTAMP,
   country VARCHAR(255) NOT NULL,
   city VARCHAR(255) NOT NULL,
   province VARCHAR(255) NOT NULL,
