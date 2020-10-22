@@ -14,7 +14,7 @@ Please enjoy our project and stay fresh, buy sneakers!
 ## Screenshots
 
 !["landing page/login"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/landing-page.png)
-!["screenshot description"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/landing-page.png)
+!["Sneaker listings"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/product-listing.png)
 !["Sneaker details page"](https://raw.githubusercontent.com/TomJAdam/mid-term-sneakers/master/docs/details-page.png)
 
 
