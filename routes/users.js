@@ -40,6 +40,7 @@ module.exports = (dataHelpers) => {
     }
 
     router.post('/login', (req, res) => {
+      console.log("coming to login ");
         const email = req.body.email;
         const password = req.body.password;
         // console.log('req.body :', req.body);
@@ -59,6 +60,7 @@ module.exports = (dataHelpers) => {
         const userId = req.session.userId;
         if (!userId) {
             //  res.send({error: "error"});
+            console.log("inside the error not signed condition");
             res.status(401).send("Not logged in!");
             return;
         }
@@ -80,7 +82,6 @@ module.exports = (dataHelpers) => {
         console.log("logout test");
         req.session = null;
         res.send({});
-
     });
 
     // register
